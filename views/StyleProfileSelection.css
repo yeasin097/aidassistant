@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.back {
+  background-color: #e8f8f8;
+  width: 100%;
+  padding: 5%;
+  min-height: 100vh;
+}
+
+nav {
+    width: 100%;
+    padding:4px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  .Aid {
+    flex: 15;
+    font-size: 30px;
+    padding-left: 20px;
+    color:#125973;
+  }
+  .logo img {
+    width: 170 px;
+    cursor: pointer;
+  }
+  
+  .options {
+    padding: 15px 20px;
+    border: 0;
+    outline: none;
+    color:#000;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  #option{
+    text-decoration: none;
+    color:#000;
+  }
+  button {
+    padding: 15px 40px;
+    border: 0;
+    outline: none;
+    border-radius: 50px;
+    background-color:  #e8f8f8;
+    color:#e8f8f8;
+    font-size: 20px;
+  }
+h3{
+  color: #125973;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.usertype{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rounduser{
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user{
+  flex-basis: 50%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #125973;
+}
+
+.footer{
+  padding: 5%;
+  background-color: #083546;
+  color:#fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about{
+  flex-basis: 60%;
+  text-align: justify;
+}
+.report{
+  flex-basis: 30%;
+}
+h4{
+  font-size: 25px;
+}
+p{
+  margin-top: 25px;
+}
+
+.round{
+  justify-content: space-between;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #083546;
+}
+
+form{
+  font-size: 15px;
+  margin-top: 25px;
+}
+#email, #comment{
+  margin-top: 5px;
+  padding: 5px;
+  padding-left: 12px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+#comment{
+  height: 150px;
+}
+#sub{
+  background: #e8f8f8;
+  color: #083546;
+  margin-top: 25px;
+  font-weight: bold;
+  padding: 15px;
+}
+footer{
+  text-align: center;
+  color: #fff;
+  background-color: #083546;
+}

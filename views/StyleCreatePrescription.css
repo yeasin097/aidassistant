@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    background-image: url("images/Doctor_tools_and_Medical_elements_pattern_cartoon_hand_drawn_cartoon_art_illustration.jpg");
+    background-size: contain;
+}
+.prescription{
+    width: 1200px;
+    margin: 3% auto;
+    
+    /*height: 623px;*/
+    box-shadow: 0 12px 18px rgba(54,176,138,0.005);
+    border-radius: 6px;
+    background: #fefefe;
+}
+.topbody{
+    text-align: center;
+    background-color: #083546;
+    width: inherit;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#logo{
+    height: 100px;
+    width: 100px;
+}
+#ph{
+    font-size: 3rem;
+    margin-bottom: 3%;
+    color: #fff;
+}
+.textfield{
+    font-size: 25px;
+    margin-left: 20px;
+    font-weight: 600;
+    color: #cc0001;
+}
+.docval{
+    font-size: 25px;
+    color: black;
+    font-weight: 400;
+}
+.textfield.doctormedicalname, .textfield.patientgender{
+    margin-bottom: 30px;
+}
+input{
+    font-size: 25px;
+    width: 500px
+}
+.add{
+    font-size: 30px;
+    font-weight: 600;
+    outline: none;
+    border: 0;
+    background-color: #cc0001;
+    
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.Dis{
+    margin-top: 10px;
+    margin-left: 192px;
+}
+.Sym{
+    margin-top: 10px;
+    margin-left: 147px;
+}
+.textfield.symptoms,.textfield.medicine{
+    margin-top: 20px  ;
+}
+select{
+    font-size: 25px;
+    width: 200px;
+}
+#medname{
+    width: 595px;
+    margin-left: 4px;
+}
+.medquantity{
+    width: 200px;
+    margin-left: 125px; 
+    margin-top: 10px;
+}
+.medtimes{
+    width: 200px;
+    margin-left: 10px; 
+    margin-top: 10px;
+}
+.medduration{
+    width: 372px;
+    margin-left: 10px; 
+    margin-top: 10px;
+}
+.medcomment{
+    width: 805px;
+    margin-left: 125px; 
+    margin-top: 10px;
+}
+.medtype{
+    margin-left: 125px; 
+    margin-top: 20px;
+}
+.medname{
+    width: 595px;
+    margin-left: 10px;
+}
+.textfield.nextvisit, .textfield.advice{
+    margin-top: 20px;
+}
+#advice{
+    font-size: 25px;
+    margin-left: 20px;
+    width: 930px;
+    height: 200px;
+}

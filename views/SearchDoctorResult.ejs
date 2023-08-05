@@ -1,0 +1,68 @@
+<!-- SearchDoctorResult.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="styleSearchDoctorResult.css">
+</head>
+<body>
+    <!-- <h1>Search Results</h1>
+    <% if (resultObject.length === 0) { %>
+        <p>No doctors found.</p>
+    <% } else { %>
+        <ul>
+            <% resultObject.forEach((doctor) => { %>
+                <li>
+                    <p>Name: <%=doctor.first_name + " "+ doctor.last_name%></p>
+                    <p>Speciality: <%= doctor.speciality %></p>
+                    <p>Medical: <%= doctor.medical_name %></p>
+                    <p>Sex: <%= doctor.gender %></p>
+                    <p>Mobile: <%= doctor.mobile_no %></p>
+                    
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+
+ -->
+
+    <h1>Search Results</h1>
+    <% if (resultObject.length === 0) { %>
+        <p>No doctors found.</p>
+    <% } else { %>
+
+            <% resultObject.forEach((doctor) => { %>
+                
+        <div class="doc_list">
+            <div class="doc_bar">
+                <table class="doctorinfo">
+                    <tr class="table-item tr1">
+                        <td class="table-item td1" rowspan="5">
+                            <img src="images/docmale.webp" id="doctorimg">
+                        </td>
+                        <td class="table-item td2" colspan="2" id="doctorname"> <span class="lb">Name: </span>Dr. <%=doctor.first_name + " "+ doctor.last_name%> </td>
+                    </tr>
+                    <tr class="table-item tr2">
+                        <td class="table-item td3" colspan="2" id="doctorspeciality"> <span class="lb">Speciality: </span> <%= doctor.speciality %> </td>
+                    </tr>
+                    <tr class="table-item tr3">
+                        <td class="table-item td4" colspan="2" id="doctormedical"><span class="lb">Medical Name: </span> <%= doctor.medical_name %> </td>
+                    </tr>
+                    <tr class="table-item tr4">
+                        <td class="table-item td5" id="doctormobile"><span class="lb">Mobile: </span> <%= doctor.mobile_no %> </td>
+                        
+                    </tr>
+                    <tr class="table-item tr5">
+                        <td class="table-item td6" id="doctorgender"><span class="lb">Gender: </span> <%= doctor.gender %> </td>
+                        
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <% }); %>
+      
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    
+    background-color: #fff;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 110px;
+    background: #083546;
+    padding: 1% 2%;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 285px;
+}
+.sidebar .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+}
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+}
+
+.logo_content .logo img{
+    margin-right: 1%;
+}
+.logo_content .logo .logo_name{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.logo_content #btn{
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    top: 3.5%;
+    left: 59%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    transform: translateX(-40%);
+}
+.logo_content #btn:hover{
+    border-radius: 12px;
+    background: #fff;
+    color: #083546;
+    cursor: pointer;
+}
+.sidebar.active .logo_content #btn{
+    left: 88%;
+}
+.sidebar ul{
+    margin-top: 15%;
+}
+.sidebar ul button{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 3.2px 12px;
+    list-style: none;
+    border: 0;
+    font-size: 1rem;
+    line-height: 50px;
+    outline: none;
+    box-shadow: none;
+    background: #083546;
+}
+
+.sidebar.active ul li:hover .tooltip{
+    display: none;
+}
+.sidebar ul li .tooltip{
+    visibility: hidden;
+    position: absolute;
+    left:  70px;
+    top: 0;
+    line-height: 30px;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    pointer-events: none;
+    z-index: 10;
+}
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+    visibility: none;
+}
+
+.sidebar ul .active a{
+    color: #083546;
+    background: #fff;
+}
+.sidebar ul li a .link_name{
+    display: none;
+}
+.sidebar.active ul li a .link_name{
+    display: block;
+}
+.sidebar ul li a{
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+    color: #083546;
+    background: #fff;
+}
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+.sidebar .profile_content{
+    display: inline;
+    position: absolute;
+    bottom: 3%;
+    left: 15%;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 12px;
+    line-height: 50px;
+    transition: all 0.4s ease;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    align-items: center;
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    background: #fff;
+    border-radius: 50%;
+}
+.profile .profile_details .name{
+    margin-left: 10px;
+}
+.sidebar.active .profile #log_out{
+    left: 75%;
+}
+.profile #log_out{
+    position: absolute;
+    left: 35%;
+    bottom: 3%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    border-radius: 12px;
+
+}
+.profile a{
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.profile a i:hover{
+    color: #083546;
+    background: #fff;
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100%-110px);
+    left: 110px;
+    margin: 1.5%;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ .home_content{
+    width: calc(100%-285px);
+    left: 285px;
+    
+}
+
+.patient_profile{
+    display: flex;
+    flex-direction: row;
+}
+.patient_info{
+    width:900px;
+    margin-right: 2%;
+
+}
+
+#ph{
+    font-size: 3rem;
+    margin-bottom: 3%;
+    color: #083546;
+   
+}
+.rightsidecontent{
+    flex-grow: 1;
+}
+.patient_info #patient_image{
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+#donate {
+    padding: 3%;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color:  #cc0001;
+    color:#fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.bloodtimer #donate:hover{
+    background: #1d2026;
+  }
+.bloodtimer{
+    font-size: 1.1rem;
+    text-align: justify;
+    border-radius: 18px;
+    padding: 5% 5%;
+    background-color: #083546;
+    color: #fff;
+    margin-top: 90px;
+}
+.bloodtimer button{
+    margin-left: 32%;
+}
+
+.bloodtimer i{
+    color: #cc0001;
+    margin-right: 5%;
+}
+ .information_box{
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+ .information_box .label {
+    color:#cc0001;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+ .information_box .info{
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+ .information_box.disease{
+    margin-top: 140px;
+ }
+ .pdisease{
+    margin-top: 8px;
+ }
+
+ /* prescription list */
+ .presbar{
+    height: 170px;
+    width: 1100px;
+    background-image: linear-gradient(to right , #083546, #1d2026);
+    background-color: #e3f5f7;
+    border-radius: 12px;
+    margin-bottom: 20px ;
+    overflow: hidden;
+    
+}
+ .presbar:hover{
+    transform: scale(1.02) ;
+    -webkit-transition: transform 0.5s ease;
+ }
+.up{
+    color: #083546;
+}
+
+.grid-container {
+    display: grid;
+}
+.grid-item {
+    text-align: left;
+    padding: 10px;
+    color:#fff;
+}
+.item1 {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-items: center;
+    
+}
+.item2 {
+    grid-column: 2 / span 3;
+    grid-row: 1 ;
+}
+.item6 {
+    grid-column: 3 / span 3;
+    grid-row: 1 ;
+}
+.item3 {
+    grid-column: 6;
+    grid-row: 1 / span 3 ;
+    align-items: center;
+    padding-left: 45px;
+    padding-top: 45px;
+}
+.item4 {
+    grid-column: 2 / span 2;
+    grid-row: 2 ;
+}
+.item7 {
+    grid-column: 3 / span 2;
+    grid-row: 2 ;
+}
+.item8 {
+    grid-column: 4 / span 2;
+    grid-row: 2 ;
+}
+.item5 {
+    grid-column: 2 / span 4;
+    grid-row: 3;
+}
+#pres_img{
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 45px;
+    margin-right: 0px;
+    margin-top: 25px;
+    height: 100px;
+    width: 100px;
+}
+#presdis{
+    font-size: 35px;
+    font-weight: 700;
+    color:#fff;
+   
+}
+#presdoc{
+    font-size: 25px;
+
+}
+#presdate{
+    font-size: 21px;
+    
+}
+#download{
+    font-size: 50px;
+    outline: none;
+    background-color: none;
+    border: 0;
+    border-radius: 10px;
+    background-color:  #1d2026;
+    color:#fff;
+    cursor: pointer;
+}
+#download:hover{
+    color:  #1d1d1d;
+    background-color:#fff;
+    cursor: pointer;
+}
+.prescription_list #presplus{
+    padding: 10px 10px 10px 10px;
+    outline: none;
+    font-size: 25px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #cc0001;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-top: -25px;
+}
+.prescription_list #presplus:hover{
+    background-color: #1d1d1d;
+}
+#presdiseaseName, #presDoctorName, #addpresdate{
+    width: 500px;
+    font-size: 20px;
+}
+#pdf{
+    background-color: #083546;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 40px;
+    width: 500px;
+}
+
+ /* report list */
+ .repbar{
+    height: 170px;
+    width: 1100px;
+    background-image: linear-gradient(to right , #083546, #1d2026);
+   
+    border-radius: 12px;
+    margin-bottom: 20px ;
+    overflow: hidden;
+    
+}
+ .repbar:hover{
+    transform: scale(1.02) ;
+    -webkit-transition: transform 0.5s ease;
+ }
+
+ .report_list #repplus{
+    outline: none;
+    font-size: 60px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #083546;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-top: 50px;
+}
+
+.reporttext{
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 250px;
+    margin-top: 10px;
+}
+.add_report #reportName,#reportDate{
+    width: 500px;
+    font-size: 20px;
+}
+.add_report #reppdf{
+    padding: 10px 10px 10px 10px;
+    outline: none;
+    font-size: 25px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #cc0001;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-top: -25px;
+    margin-left: 50px;
+}
+.add_report #reppdf:hover{
+    background-color: #1d1d1d;
+}
+#rep_img{
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 45px;
+    margin-right: 0px;
+    margin-top: 25px;
+    height: 100px;
+    width: 100px;
+}
+#reptest{
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+}
+#repdate{
+    font-size: 25px;
+    
+}
+#repother{
+    font-size: 21px;
+    color: #fff;
+}
+
+/*medicinelist*/
+.med_bar{
+    height: 120px;
+    background-color: #e8f8f8;
+    background-image: linear-gradient(to right , #083546, #1d2026);
+    
+    width: 800px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    
+}
+#medimg{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background-color: #fff;
+}
+#medtype{
+    font-size: 30px;
+    font-weight: 600;
+    width: 200px;
+    color:#fff;
+} 
+#medname{
+    font-size: 30px;
+    font-weight: 600;
+    width: 800px;
+    color:#fff;
+}
+#medquantity, #medtimes, #medduration{
+font-size: 20px;
+width: 200px;
+color:#fff;
+}
+#medcomment{
+font-size: 20px;
+color:#fff;
+}
+
+
+/* Search Doctor */
+.searchbox{
+    display: flex;
+    flex-direction: row;
+}
+#labelsearch{
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #cc0001;
+}
+select{
+    margin-right: 10px;
+    width: 350px;
+}
+#Speciality, #Medical, #District{
+    font-size: 22px;
+}
+.searchbutton{
+    font-size: 70px;
+    margin-left: 20px;
+    color: #083546;
+    border-radius: 50%;
+    outline: none;
+    border: 0;
+    background-color: #fff;
+}
+.searchbutton:hover{
+    cursor: pointer;
+    color: #cc0001;
+}
+.doctorinfo .table-item.td1{
+    width: 40%;
+   }
+
+.doctorinfo{
+/* background-image: linear-gradient(to right , #1d2026, #083546);*/
+background-image: linear-gradient(to right , #083546, #1d2026);
+border-radius: 15px;
+width: 800px;
+margin-top: 30px;
+}
+#doctorimg{
+height: 200px;
+width: 200px;
+margin-left:50px;
+background-color: #fff;
+border-radius: 50%;
+}
+#doctorname{
+font-size: 25px;
+font-weight: 600;
+color: #fff;
+}
+#doctorspeciality, #doctormedical, #doctormobile,#doctorgender{
+font-size: 20px;
+color: #fff;
+}
+.lb{
+color: #59b3cc;
+}
+
+/*edit profile */
+.edit_box .edit {
+    color:#59b3cc;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.change{
+    width: 500px;
+}
+.edit_box input{
+    padding-left: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#showp{
+    font-size: 20px;
+    margin-right: 50px;
+}
+.editflex{
+    display: flex;
+}
+.savebutton{
+    margin-left: 500px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    border: none;
+    outline: none;
+    background: #cc0001;
+    color:#fff;
+    width: 300px;
+    font-size: 30px;
+    padding: 15px 25px 15px 25px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.savebutton:hover{
+    background-color:#083546;
+}
+#addqua{
+    width: 400px;
+    margin-left: 450px;
+}

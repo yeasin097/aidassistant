@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title> Patient Overview </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StylePatientOverview.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="images/Aidassistantredfavicon.png">
+    </head>
+
+    <body>
+        <div class="patientoverview">
+            <div class="topbody">
+                <img src="images/Aidassistantred.png" id="logo">
+                <h1 id="ph"> Patient's Overview </h1>
+                
+            </div>
+            <div class="midbody">
+                <!-- <div class="searchbar">
+                    <a href="DoctorHome.html"><i class='bx bxs-home'></i></a>
+                    <input type="text" name="patient" id="patient" placeholder="Enter Patient ID">
+                    <button class="searchbutton" type="submit">
+                        <a href="PatientOverview.html"><i class='bx bx-search'></a></i>
+                    </button>
+                </div> -->
+                <div class="searchresult">
+                    <table class="patientinfo">
+                        <tr>
+                            <td class="td1" rowspan="5"><img  id="patientimg" src="data:image/jpg;base64, <%= imageobj.image.data.toString('base64') %>"></td>
+                            <td id="patientid"><span id=lb>ID: </span> <%= searchResult.patient_id %></td>
+                        </tr>
+                        <tr>
+                            <td id="patientname"><span id=lb>Name: </span> <%= searchResult.first_name + " "+ searchResult.last_name %>  </td>
+                        </tr>
+                        <tr>
+                            <td id="patientmobile"><span id=lb>Mobile: </span>  <%=searchResult.mobile_no%> </td>
+                        </tr>
+                        <tr>
+
+                        <% const birth_date = new Date(searchResult.date_of_birth) %>
+                        <% const current_date = new Date() %>
+                            <td id="patientage"><span id=lb>Age: </span>  <%= current_date.getFullYear()-birth_date.getFullYear() %>  <span>years</span> </td>
+                        </tr>
+
+                        <tr>
+                            <td id="patientmobile"><span id=lb>Allergies: </span>  <%= searchResult.allergy %> </td>
+                            
+                        </tr>
+                        <tr class="tr 5" >
+                            <td>
+                                <ul style="list-style: none; padding: 20px;">
+                                    <li>Diseases</li>
+                                    <% for (let i = 0; i < object_disease.length; i++) { %>
+                                      <li style="padding: 10px;"><%= object_disease[i] %></li>
+                                    <% } %>
+                                </ul>
+                            </td>
+
+                            <td>
+                                <ul style="list-style: none; padding: 20px;">
+                                    <li>Dates</li>
+                                    <% for (let i = 0; i < object_disease.length; i++) { %>
+                                      <li style="padding: 10px;"><%= object_dates[i] %></li>
+                                    <% } %>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="createprescription">
+                                <form action="CreatePrescription" method="post">
+                                    <button id="create">Create Prescription</a></button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    <script src="PatientOverview.js"></script>    
+    </body>
+</html>

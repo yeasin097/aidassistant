@@ -1,0 +1,419 @@
+<html>
+    <head>
+        <title> Patient Home </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StylePatientHome.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="images/Aidassistantredfavicon.png">
+    </head>
+
+    <body>
+        <div class="sidebar active">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="images/Aidassistantred.png" height="50px" width="50px">
+                    <div class="logo_name">Aid Assistant</div>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav_list" type="none">
+                <li>
+                <button class="item active" id="current">
+                    <a href="#">
+                        <i class='bx bxs-user'></i>
+                        <span class="link_name"> Profile </span>
+                    </a>
+                    <span class="tooltip">Profile</span>
+                </button>
+            </li>
+                <li>
+                <button class="item">
+                    <a href="#">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name"> Prescription List </span>
+                    </a>
+                    <span class="tooltip">Prescription List</span>
+                </button>
+                </li>
+                <li>
+                <button  class="item">
+                    <a href="#">
+                        <i class='bx bxs-report'></i>
+                        <span class="link_name"> Report List </span>
+                    </a>
+                    <span class="tooltip">Report List</span>
+                </button>
+                </li>
+                <li>
+                <button class="item">
+                    <a href="#">
+                        <i class='bx bxs-capsule'></i>
+                        <span class="link_name"> Ongoing Medicine </span>
+                    </a>
+                    <span class="tooltip">Ongoing Medicine</span>
+                </button>
+                </li>
+                <li>
+                <button class="item">
+                    <a href="#">
+                        <i class='bx bxs-edit-alt'></i>
+                        <span class="link_name"> Edit Profile </span>
+                    </a>
+                    <span class="tooltip">Edit Profile</span>
+                </button>
+                </li>
+                <li>
+                <button class="item">
+                    <a href="#">
+                        <i class='bx bx-search-alt-2'></i>
+                        <span class="link_name"> Search Doctor </span>
+                    </a>
+                    <span class="tooltip">Search Doctor</span>
+                </button>
+                </li> 
+            </ul>
+
+            
+
+            <div class="profile_content">
+                <div class="profile">
+                   
+                    <div class="profile_details">
+                        <div class="name"> <%=logged_user.first_name + " "+ logged_user.last_name%> </div>
+                    </div>
+                    <a href="PatientLogin.html"><i class='bx bx-log-out' id="log_out"></i></a>
+                
+                </div>
+            </div>
+        </div>
+       
+        <div class="home_content">
+            
+            <div class="patient_profile" id="patientprofile">
+                <div class="patient_info">
+                    <h1 id="ph"> Patient Information</h1>
+
+                    <img  id="patient_image" src="data:image/jpg;base64, <%= imageobj.image.data.toString('base64') %>">
+                    <div class="information_box">
+                        <p class="label pid"> Patient ID </p>
+                        <p class="info pid"> <%=logged_user.patient_id%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label name"> Name </p>
+                        <p class="info name"> <%=logged_user.first_name + " "+ logged_user.last_name%> </p>
+                    </div>
+                    <div class="information_box">
+
+                        <!-- javascript calculation for age -->
+                        <% const birth_date = new Date(logged_user.date_of_birth) %>
+                        <% const current_date = new Date() %>
+                        <p class="label age"> Age </p>
+                        <p class="info age"> <%= current_date.getFullYear()-birth_date.getFullYear() %> years</p>
+                    </div>
+                    <br>
+                    <div class="information_box">
+                        <p class="label gender"> Gender </p>
+                        <p class="info gender"> <%=logged_user.gender%> </p>
+                    </div>
+
+                    <div class="information_box">
+                        <p class="label email"> Email </p>
+                        <p class="info email"> <%=logged_user.email%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label dob"> Date of Birth </p>
+                        <p class="info dob"> <%=logged_user.date_of_birth%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label mobile"> Mobile Number </p>
+                        <p class="info mobile"> <%=logged_user.mobile_no%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label bloodgrp"> Blood Group </p>
+                        <p class="info bloodgrp"> <%=logged_user.blood_group%></p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label height"> Height (CM) </p>
+                        <p class="info height"> <%=logged_user.height%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label weight"> Weight (KG) </p>
+                        <p class="info weight"> <%=logged_user.weight%> </p>
+                    </div>
+                    <div class="information_box">
+                        <% var wei=logged_user.weight %>
+                        <% var len=logged_user.height/100 %>
+                        <p class="label bmi"> Body Mass Index (BMI) </p>
+                        <p class="info bmi"> <%= wei/(len*len)%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label allergy"> Allergies </p>
+                        <!-- <p class="info allergy" id="allergy"> </p> -->
+                        <p class="info allergy"> <%= logged_user.allergy%> </p>
+                        
+                    </div>
+                </div> 
+
+                <div class="rightsidecontent">
+                    <div class="bloodtimer">
+                        <h2><i class='bx bxs-donate-blood' ></i>Blood Donation Limit</h2>
+                        <p class="bloodcontent">
+                            You can donate blood now.<br><br>
+                            If you donated blood, click the button below to start timer.
+                        </p>
+                        <button input="submit" id="donate">Donated</button>
+                    </div>
+                    
+                    <div class="information_box disease">
+                        <p class="label disease"> Disease History </p>
+                        <p class="info disease" id="disease"> </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="patient_prescription_list" id="patientprescriptionlist">
+                <div class="prescription_list" id="pres_list">
+                    <h1 id="ph"> Prescription List </h1>
+                    <form action="uploadPrescription" method="post" enctype="multipart/form-data" class="addprescriptionform">
+                        <div class="add_prescription" id="addprescription">
+                                <p class="reporttext">Enter Prescription Disease Name</p>
+                                <input type="text" id="presdiseaseName" name="presdiseaseName" placeholder="Jaundice, Cholestrol etc">
+                                <p class="reporttext">Enter Doctor Name</p>
+                                <input type="text" id="presDoctorName" name="presDoctorName" placeholder="Dr. Muhammad">
+                                <p class="reporttext">Enter Prescription Date</p>
+                                <input type="date" id="presdate" name="presdate" placeholder="dd/mm/yyyy">
+                               
+                                <p class="reporttext">Choose prescription PDF file</p>
+                                <input type="file" id="pdf" name="pdf" accept=".pdf">
+                                <button type="submit" id="presplus" >Upload PDF</button>
+                                <br>
+                        </div>
+                    </form>
+
+                    <h1 class="up">Uploaded Prescriptions</h1>
+                        <div>
+                            <% prescriptions.forEach(function(item) { %>
+                            <div>
+                                <% if (item.pdf.contentType === 'application/pdf') { %>
+                                <!-- Display the PDF -->
+                                <object data="data:<%=item.pdf.contentType%>;base64,<%=item.pdf.data.toString('base64')%>"
+                                        type="application/pdf" width="100%" height="500">
+                                    <embed src="data:<%=item.pdf.contentType%>;base64,<%=item.pdf.data.toString('base64')%>"
+                                        type="application/pdf">
+                                </object>
+                                <% } %>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                <br>
+            </div>
+
+            <div class="patient_report_list" id="patientreportlist">
+                <div class="report_list" id="rep_list">
+                    <h1 id="ph"> Report List </h1>
+                    <form action="uploadReport" method="post" enctype="multipart/form-data" class="addreportform">
+                        <div class="add_report" id="addreport">
+                                <p class="reporttext">Test Name</p>
+                                <input type="text" id="reportName" name="reportName" placeholder="Jaundice, Cholestrol etc">
+                             
+                                <p class="reporttext">Enter Report Date</p>
+                                <input type="date" id="reportDate" name="reportDate" placeholder="dd/mm/yyyy">
+                               
+                                <p class="reporttext">Choose prescription PDF file</p>
+                                <input type="file" id="pdf" name="pdf" accept=".pdf">
+                                <button type="submit" id="reppdf" >Upload PDF</button>
+                                <br>
+                        </div>
+                    </form>
+
+                    <h1 class="up">Uploaded Reports</h1>
+                        <div>
+                            <% reports.forEach(function(item) { %>
+                            <div>
+                                <% if (item.pdf.contentType === 'application/pdf') { %>
+                                <!-- Display the PDF -->
+                                <object data="data:<%=item.pdf.contentType%>;base64,<%=item.pdf.data.toString('base64')%>"
+                                        type="application/pdf" width="100%" height="500">
+                                    <embed src="data:<%=item.pdf.contentType%>;base64,<%=item.pdf.data.toString('base64')%>"
+                                        type="application/pdf">
+                                </object>
+                                <% } %>
+                            </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                <br>
+            </div>
+
+            
+
+            <div class="patient_medicine_list" id="patientmedicinelist">
+                <div class="medicine_list" id="med_list">
+                    <h1 id="ph"> Medicine List </h1>
+                        <% if (prescriptionData.medicines && prescriptionData.medicines.length > 0) { %>
+                            <% prescriptionData.medicines.forEach(medicine => { %>
+                                <div class="med_bar">
+                                    <table class="table-container">
+                                        <tr class="table-item tr1">
+                                            <td class="table-item td1" rowspan="3">
+                                                <img src="images/capsuleicon.webp" id="medimg">
+                                            </td>
+                                            <td class="table-item td2" id="medtype"> <%= medicine.type %> </td>
+                                            <td class="table-item td3" id="medname" colspan="3"> <%= medicine.name %> </td>
+                                        </tr>
+                                        <tr class="table-item tr2">
+                                            <td class="table-item td4" id="medquantity"> <%= medicine.quantity %> </td>
+                                            <td class="table-item td5" id="medtimes"> <%= medicine.times %> </td>
+                                            <td class="table-item td6"></td>
+                                            <td class="table-item td7" id="medduration"> <%= medicine.duration %> </td>
+                                        </tr>
+                                        <tr class="table-item tr3">
+                                            <td class="table-item td8" id="medcomment" colspan="4" rowspan="2">  <%= medicine.comment || '-' %> </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            <% }) %>
+                        <% } else { %>
+                            No medicines prescribed
+                        <% } %>
+                    
+                </div>
+                <br>
+            </div>
+
+
+            <div class="patient_edit_profile" id="patienteditprofile">
+                <div class="edit_profile" id="edit_prof">
+                    <h1 id="ph"> Edit Profile </h1>
+                    <form action="editBasicPatient" method="post">
+                        <div class="editflex">
+                            <div class="left">
+                                <div class="edit_box">
+                                    <p class="edit pass"> Change Password </p>
+                                    <input type="password" id="editpass" name="editpass" class="change" placeholder="New Password">
+                                    <input type="checkbox" onclick="ShowPass()" id="show"><span id="showp">Show</span>
+                                </div>
+                                <div class="edit_box">
+                                    <p class="edit confirmpass"> Confirm Password </p>
+                                    <input type="password" id="editconfirmpass"  name="editconfirmpass" class="change" placeholder="Confirm New Password">
+                                    <input type="checkbox" onclick="ShowCPass()" id="show"><span id="showp">Show</span>
+                                </div>
+                                <div class="edit_box">
+                                    <p class="edit mobile"> Mobile Number </p>
+                                    <input type="tel" id="editmobile" name="editmobile" class="change" placeholder="Mobile Number">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="edit_box">
+                                    <p class="edit height"> Height </p>
+                                    <input type="number" id="editheight" name="editheight" class="change" placeholder="Height(CM)"><br>
+                                </div>
+                                <div class="edit_box">
+                                    <p class="edit weight"> Weight </p>
+                                    <input type="number" id="editweight" name="editweight" class="change" placeholder="Weight(KG)"><br>
+                                </div>
+                                
+                                <div class="edit_box">
+                                    <p class="edit eduqua"> Allergy </p>
+                                    <input type="text" id="editallergy" name="editallergy" class="change" placeholder="Allergy">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="savebutton" type="submit" onclick="Check()">Save Changes</button>
+                    </form>
+                    
+                </div>
+                <br>
+            </div>
+
+
+
+            <div class="patient_search_doctor" id="patientsearchdoctor">
+                <form action="searchDoctor" method="post">
+                    <div class="search_doctor" id="search_doc">
+                        <h1 id="ph"> Searchs Doctor </h1>
+                        <div class="searchbox">
+                            <div class="searchspeciality">
+                                <span id="labelsearch">Enter Speciality</span><br>
+                                <select id="speciality" name="speciality">
+                                    <option value="none">Select Speciality(None)</option>
+                                    <option value="Cardiology(Heart)">Cardiology(Heart)</option>
+                                    <option value="Dental">Dental</option>
+                                    <option value="Dermatology(Skin)">Dermatology(Skin)</option>
+                                    <option value="Endocrinology(Hormone)">Endocrinology(Hormone)</option>
+                                    <option value="Gastroenterologist(Stomach)">Gastroenterologist(Stomach)</option>
+                                    <option value="Gynecology">Gynecology</option>
+                                    <option value="Medicine">Medicine</option>
+                                    <option value="Nephrology(Kidney)">Nephrology(Kidney)</option>
+                                    <option value="Neurology(Brain)">Neurology(Brain)</option>
+                                    <option value="Ophthalmology(Eye)">Ophthalmology(Eye)</option>
+                                    <option value="Otolaryngology(Nose Ear Neck)">Otolaryngology(Nose Ear Neck)</option>
+                                    <option value="Osteology(Bones)">Osteology(Bones)</option>
+                                    <option value="Pediatrics(Infant)">Pediatrics(Infant)</option>
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="Surgeon">Surgeon</option>
+                                </select>
+                            </div>
+                            <div class="searchmedical">
+                                <span id="labelsearch">Enter Medical Name</span><br>
+                                <select id="medical" name="medical">
+                                    <option value="none">Select Medical Name(None)</option>
+                                    <option value="CHEVRON">CHEVRON</option>
+                                    <option value="Chittagong Maa-Shishu General Hospital">Chittagong Maa-Shishu General Hospital</option>
+                                    <option value="Chittagong Medical College">Chittagong Medical College</option>
+                                    <option value="CSCR">CSCR</option>
+                                    <option value="Cumilla Medical College">Cumilla Medical College</option>
+                                    <option value="Dhaka Medical College">Dhaka Medical College</option>
+                                    <option value="Sir Salimullah Medical College">Sir Salimullah Medical College</option>
+                                    <option value="Mymensingh Medical College">Mymensingh Medical College</option>
+                                    <option value="National Hospital">National Hospital</option>
+                                    <option value="Royal Hospital">Royal Hospital</option>
+                                    <option value="Shaheed Suhrawardy Medical College">Shaheed Suhrawardy Medical College</option>
+                                    <option value="Sher-E-Bangla Medical College">Sher-E-Bangla Medical College</option>
+                                    <option value="Surgiscope Pvt. Ltd.">Surgiscope Pvt. Ltd.</option>
+                                </select>
+                            </div>
+                            <div class="searchdistrict">
+                                <span id="labelsearch">Enter District</span><br>
+                                <select id="district" name="district">
+                                    <option value="none">Select District(None)</option>
+                                    <option value="Barisal">Barisal</option>
+                                    <option value="Bandarban">Bandarban</option>
+                                    <option value="Chittagong">Chittagong</option>
+                                    <option value="Cox Bazar">Coxs Bazar</option>
+                                    <option value="Cumilla">Cumilla</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Dinajpur">Dinajpur</option>
+                                    <option value="Feni">Feni</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Moulavibazar">Moulavibazar</option>
+                                    <option value="Pabna">Pabna</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Sonargaon">Sonargaon</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                </select>
+                            </div>
+                            <button class="searchbutton" type="submit">
+                                <i class='bx bx-search'></i>
+                            </button>
+                        </div>
+                        <div id="searchresult">
+    
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+
+            
+        </div>
+        </div>
+        
+        <script src="PatientHome.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Maven Pro", sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #e8f8f8;
+    background-image: url("images/Doctor_tools_and_Medical_elements_pattern_cartoon_hand_drawn_cartoon_art_illustration.jpg");
+    background-size: cover;
+}
+.container{
+    width: 80%;
+    margin: 3% auto;
+    display: flex;
+    height: 623px;
+    box-shadow: 0 12px 18px rgba(54,176,138,0.005);
+    border-radius: 6px;
+    background: #fff;
+}
+.login-link{
+    background-color: #125973;
+    background-image: url("images/docmale.webp");
+    background-position: bottom center;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    width: 30%;
+    padding: 3%;
+}
+.signupformcontainer{
+    width: 70%;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    margin-left: 24%;
+
+}
+.logoname{
+    font-weight: 550;
+    color: #fff;
+    font-size: 30px;
+    align-items: center;
+}
+.leftbigheading{
+    font-weight: 800;
+    color:#fff;
+    font-size: 20px;
+    margin: 10% 0 5%;
+    text-align: center;
+}
+.loginbtn{
+    text-decoration: none;
+    color: #fff;
+    width: 70%;
+    font-weight: 500;
+    display: inline-block;
+    margin: 7% 15%;
+    text-align: center;
+    border: 2px solid #eff0ff;
+    border-radius: 24px;
+    padding: 3% 0;
+    background-color: #125973;
+}
+.loginbtn:hover{
+    background-color: #eff0ff;
+    color: #125973;
+    cursor: pointer;
+}
+.bigheading{
+    font-weight: 900;
+    font-size: 43px;
+    color: #125973;
+}
+.progress-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 0;
+    width: 70%;
+}
+.progress-bar .stage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    flex-direction: column;
+}
+.progress-bar .tool-tip{
+    color: #125973;
+    font-weight: 600;
+}
+.stageno{
+    margin: 6% 0;
+    padding: 2% 7%;
+    border-radius: 50%;
+    background-color: #e8f8f8;
+}
+.button-container{
+    display: flex;
+    align-items: center;
+    margin: 4% 0;
+}
+.textfield{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 2%;
+    margin: 0 2%;
+    width: 48%;
+    border-radius: 4px;
+    color: #083546;
+}
+input{
+    border: none;
+    outline: none;
+    background: inherit;
+    color:#083546;
+    width: 200%;
+    margin-left: 4%;
+    font-size: 20px;
+}
+.signup-form-content{
+    width: 100%;
+    padding: 0 3%;
+}
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field, input::placeholder{
+    color: #84848d;
+    background-color: #fff;
+}
+input[type="date"]::-webkit-calendar-picker-indicator{
+    color: rgba(0,0,0,0);
+    opacity: 1;
+    display: block;
+    height: 20px;
+   
+}
+.textfield.fname::after{
+    content: 'First Name';
+    background-color: #fff;
+    position: relative;
+    padding: 0 4%;
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 334px;
+}
+.textfield.lname::after{
+    content: 'Last Name';
+    background-color: #fff;
+    position: relative;
+    padding: 0 4%;
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 334px;
+}
+.textfield.dob::after{
+    content: 'Date of Birth';
+    background-color: #fff;
+    position: relative;
+    padding: 0 4%;
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.gender-selection{
+    display: flex;
+    align-items: center;
+    margin-left: 4%;
+    width: 100%;
+
+}
+.gender-selection label{
+    margin: 0 2%;
+    display: flex;
+    align-items: center;
+    color: #000;
+    width: 20%;
+}
+input[type="radio"]{
+    accent-color: #125973;
+    margin-right: 6%;
+}
+
+.fieldheading{
+    color: #125973;
+    width: 20%;
+}
+.pagebtns{
+    display:flex;
+    flex-direction: row;
+
+}
+button{
+    border: none;
+    outline: none;
+    background: #125973;
+    color:#fff;
+    width: 100%;
+    margin-left: 2%;
+    font-size: 20px;
+    padding: 3%;
+    border-radius: 14px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:#083546;
+
+}
+.Previous{
+    visibility: hidden;
+}
+.textfield.mobileno::after{
+    content: 'Mobile Number';
+    background-color: #fff;
+    position: relative;
+ 
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 480px;
+}
+.textfield.email::after{
+    content: 'Email';
+    background-color: #fff;
+    position: relative;
+  
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.password::after{
+    content: 'Password';
+    background-color: #fff;
+    position: relative;
+   
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.confirmpassword::after{
+    content: 'Re-Password';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.division::after{
+    content: 'Division';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.district::after{
+    content: 'District';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.thana::after{
+    content: 'Thana';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.bmdc::after{
+    content: 'BMDC';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.verification::after{
+    content: 'Verification';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.speciality::after{
+    content: 'Speciality';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.textfield.medicalname::after{
+    content: 'Medical Name';
+    background-color: #fff;
+    position: relative;
+
+    left: -210px;
+    top: -43px;
+    color:#125973;
+    width: 380px;
+}
+.tc-content input{
+    width: 4%;
+    margin-left: 4%;
+    accent-color: #125973;
+    margin-bottom: 4%;
+}
+.tc a{
+    text-decoration: none;
+    color:#125973;
+}
+label .tc{
+    margin: 4%;
+}

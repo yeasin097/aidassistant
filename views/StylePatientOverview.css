@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    background-image: url("images/Doctor_tools_and_Medical_elements_pattern_cartoon_hand_drawn_cartoon_art_illustration.jpg");
+    background-size: contain;
+}
+.patientoverview{
+    width: 1200px;
+    margin: 3% auto;
+    
+    /*height: 623px;*/
+    box-shadow: 0 12px 18px rgba(54,176,138,0.005);
+    border-radius: 6px;
+    background: #fefefe;
+}
+.topbody{
+    text-align: center;
+    background-color: #083546;
+    width: inherit;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#logo{
+    height: 100px;
+    width: 100px;
+}
+#ph{
+    font-size: 3rem;
+    margin-bottom: 3%;
+    color: #fff;
+}
+
+input{
+    padding-left: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+#patient{
+    font-size: 25px;
+    width: 550px;
+}
+.searchbar{
+    text-align: center
+}
+.searchbar .bx.bxs-home{
+    margin-right: 20px;
+    color: #083546;
+    font-size: 25px;
+}
+.searchbutton i{
+    padding-top: 0px;
+    margin-left: 10px;
+
+}
+.searchbutton{
+    font-weight: 900;
+    font-size: 40px;
+    margin-left: 0px;
+    color: #083546;
+    /*border-radius: 50%;*/
+    outline: none;
+    border: 0;
+    background-color: #fff;
+}
+.searchbutton a{
+    color: #083546;
+}
+.searchbutton a:hover{
+    cursor: pointer;
+    color: #cc0001;
+}
+.patientinfo{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.patientinfo .td1{
+    width: 40%;
+}
+#lb{
+    color: #59b3cc;
+}
+.patientinfo{
+    background-image: linear-gradient(to right , #083546, #1d2026);
+    border-radius: 15px;
+    width: 800px;
+    margin-top: 30px;
+    color: #fff;
+}
+#patientimg{
+    height: 200px;
+    width: 200px;
+    margin-left:50px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#patientid{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+#patientname, #patientmobile, #patientage{
+    font-size: 25px;
+    color: #fff;
+}
+#patientdisease, #patientallergy{
+    font-size: 30px;
+    font-weight: 900;
+    color: #59b3cc;
+    vertical-align: top;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+#patientdisease li, #patientallergy li{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 400;
+}
+#createprescription{
+    text-align: center;
+    padding-bottom: 20px;
+}
+#create{
+    border: none;
+    outline: none;
+    background: #cc0001;
+    color:#fff;
+    width: 450px;
+    font-size: 25px;
+    padding: 3%;
+    border-radius: 14px;
+    cursor: pointer;
+}
+#create a{
+    color: #fff;
+    text-decoration: none;
+}
+#create:hover{
+    background-color:#083546;
+}

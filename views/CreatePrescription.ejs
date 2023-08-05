@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title> Create Prescription </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleCreatePrescription.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="images/Aidassistantredfavicon.png">
+    </head>
+
+    <body>
+
+        <div class="prescription">
+            <div class="topbody">
+                <img src="images/Aidassistantred.png" id="logo">
+                <h1 id="ph"> Create Prescription </h1>
+            </div>
+            <div class="midbody">
+               
+                    <div class="prescription-form-content">
+                        <div class="textfield date">
+                            <span class="doc date"> Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </span>
+                                <% const current_date = new Date() %>
+                            <span class="docval" id="date"> <%= current_date.toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' }) %> </span>
+                        </div>
+                        <div class="textfield doctorname">
+                            <span class="doc name"> Doctor's Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </span>
+                            <span class="docval" id="docnamevalue"> Dr. <%=logged_user.first_name + " "+ logged_user.last_name%> </span>
+                        </div>
+                        <div class="textfield doctorspeciality">
+                            <span class="doc speciality"> Doctor's Speciality &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;: </span> 
+                            <span class="docval" id="docspeciality"><%=logged_user.speciality%> </span>
+                        </div>
+                        <div class="textfield doctormedicalname">
+                            <span class="doc medicalname"> Doctor's Medical Name : </span> 
+                            <span class="docval" id="docmedicalname"> <%=logged_user.medical_name%> </span>
+                        </div>
+
+                        <div class="textfield patientname">
+                            <span class="doc patientname"> Patient's Name &nbsp;&nbsp;: </span> 
+                            <span class="docval" id="patientname"> <%= searchResult.first_name + " "+ searchResult.last_name %> </span>
+                        </div>
+                        <div class="textfield patientage">
+                            <span class="doc patientage"> Patient's Age &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span> 
+                            <% const birth_date = new Date(searchResult.date_of_birth) %>
+                            
+                            <span class="docval" id="patientage"> <%= current_date.getFullYear()-birth_date.getFullYear() %> </span>
+                        </div>
+                        <div class="textfield patientgender">
+                            <span class="doc patientgender"> Patient's Gender : </span> 
+                            <span class="docval" id="patientgender"> <%= searchResult.gender %> </span>
+                        </div>
+                        <form action="insertPrescription" method="post" class="prescription-form">
+                            <div class="presfield">
+                                <div class="textfield disease" id="textfielddisease">
+                                    <label for="disease">Disease Name: </label>
+                                    <input type="text" name="disease1" id="disease1" placeholder="Enter Disease"> 
+                                    <input type="text" name="disease2" id="disease2" class="Dis" placeholder="Enter Disease"> 
+                                    <input type="text" name="disease3" id="disease3" class="Dis" placeholder="Enter Disease"> 
+                                </div>
+                                <div class="textfield symptoms" id="textfieldsymptoms">
+                                    <label for="symptom">Symptoms: </label>
+                                    <input type="text" name="symptom1" id="symptom1" placeholder="Enter Symptom"> 
+                                    <input type="text" name="symptom2" id="symptom2" class="Sym" placeholder="Enter Symptom"> 
+                                    <input type="text" name="symptom3" id="symptom3" class="Sym" placeholder="Enter Symptom"> 
+                                </div>
+                                <div class="textfield medicine" id="textfieldmedicine">
+                                    <label for="medicine1">Medicine: </label>
+                                    <select name="medicine1" id="medicinetype1">
+                        
+                                            <option value="Capsule">Capsule</option>
+                                            <option value="Drop">Drop</option>
+                                            <option value="Inhaler">Inhaler</option>
+                                            <option value="Injection">Injection</option>
+                                            <option value="Ointment">Ointment</option>
+                                            <option value="Suppository">Suppository</option>
+                                            <option value="Syrup">Syrup</option>
+                                            <option value="Tablet">Tablet</option>
+                                    </select>
+                                    <input type="text" class="medname" name="medname1" id="medname1" placeholder="Medicine Name"><br>
+                                    <input type="number" class="medquantity" id="medquantity1" name="medquantity1" placeholder="Quantity"> 
+                                    <input type="text" class="medtimes" id="medtimes1" name="medtimes1" placeholder="Time">
+                                    <input type="text" class="medduration" id="medduration1" name="medduration1" placeholder="Duration"><br>
+                                    <input type="text" class="medcomment" id="medcomment1" name="medcomment1" placeholder="Comment"><br>
+    
+                        
+                                    <select name="medicine2" id="medicinetype2" class="medtype">
+                        
+                                        <option value="Capsule">Capsule</option>
+                                        <option value="Drop">Drop</option>
+                                        <option value="Inhaler">Inhaler</option>
+                                        <option value="Injection">Injection</option>
+                                        <option value="Ointment">Ointment</option>
+                                        <option value="Suppository">Suppository</option>
+                                        <option value="Syrup">Syrup</option>
+                                        <option value="Tablet">Tablet</option>
+                                    </select>
+                                    <input type="text" class="medname" name="medname2" id="medname2" placeholder="Medicine Name"><br>
+                                    <input type="number" class="medquantity" id="medquantity2" name="medquantity2" placeholder="Quantity"> 
+                                    <input type="text" class="medtimes" id="medtimes2" name="medtimes2" placeholder="Time">
+                                    <input type="text" class="medduration" id="medduration2" name="medduration2" placeholder="Duration"><br>
+                                    <input type="text" class="medcomment" id="medcomment2" name="medcomment2" placeholder="Comment"><br>
+    
+                                <select name="medicine3" id="medicinetype3" class="medtype">
+                        
+                                    <option value="Capsule">Capsule</option>
+                                    <option value="Drop">Drop</option>
+                                    <option value="Inhaler">Inhaler</option>
+                                    <option value="Injection">Injection</option>
+                                    <option value="Ointment">Ointment</option>
+                                    <option value="Suppository">Suppository</option>
+                                    <option value="Syrup">Syrup</option>
+                                    <option value="Tablet">Tablet</option>
+                                </select>
+                                <input type="text" class="medname" name="medname3" id="medname3" placeholder="Medicine Name"><br>
+                                <input type="number" class="medquantity" id="medquantity3" name="medquantity3" placeholder="Quantity"> 
+                                <input type="text" class="medtimes" id="medtimes3" name="medtimes3" placeholder="Time">
+                                <input type="text" class="medduration" id="medduration3" name="medduration3" placeholder="Duration"><br>
+                                <input type="text" class="medcomment" id="medcomment3" name="medcomment3" placeholder="Comment"><br>
+    
+                                <select name="medicine4" id="medicinetype4" class="medtype">
+                        
+                                    <option value="Capsule">Capsule</option>
+                                    <option value="Drop">Drop</option>
+                                    <option value="Inhaler">Inhaler</option>
+                                    <option value="Injection">Injection</option>
+                                    <option value="Ointment">Ointment</option>
+                                    <option value="Suppository">Suppository</option>
+                                    <option value="Syrup">Syrup</option>
+                                    <option value="Tablet">Tablet</option>
+                                </select>
+                                <input type="text" class="medname" name="medname4" id="medname4" placeholder="Medicine Name"><br>
+                                <input type="number" class="medquantity" id="medquantity4" name="medquantity4" placeholder="Quantity"> 
+                                <input type="text" class="medtimes" id="medtimes4" name="medtimes4" placeholder="Time">
+                                <input type="text" class="medduration" id="medduration4" name="medduration4" placeholder="Duration"><br>
+                                <input type="text" class="medcomment" id="medcomment4" name="medcomment4" placeholder="Comment"><br>
+    
+                                <select name="medicine5" id="medicinetype5" class="medtype">
+                        
+                                    <option value="Capsule">Capsule</option>
+                                    <option value="Drop">Drop</option>
+                                    <option value="Inhaler">Inhaler</option>
+                                    <option value="Injection">Injection</option>
+                                    <option value="Ointment">Ointment</option>
+                                    <option value="Suppository">Suppository</option>
+                                    <option value="Syrup">Syrup</option>
+                                    <option value="Tablet">Tablet</option>
+                                </select>
+                                <input type="text" class="medname" name="medname5" id="medname5" placeholder="Medicine Name"><br>
+                                <input type="number" class="medquantity" id="medquantity5" name="medquantity5" placeholder="Quantity"> 
+                                <input type="text" class="medtimes" id="medtimes5" name="medtimes5" placeholder="Time">
+                                <input type="text" class="medduration" id="medduration5" name="medduration5" placeholder="Duration"><br>
+                                <input type="text" class="medcomment" id="medcomment5" name="medcomment5" placeholder="Comment"><br>
+    
+                                </div>
+    
+                                <div class="textfield advice">
+                                    <span class="doc advice"> Advice : </span> 
+                                </div>
+                                <textarea id="advice" name="advice" rows="4" cols="400" placeholder="Advice"></textarea>
+    
+                                <div class="textfield nextvisit">
+                                    <span class="doc nextvisit"> Date of Next Visit : </span> 
+                                    <input type="date" id="nextdate" name="nextdate"> 
+                                </div>
+                            </div>
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+                        
+                        
+            </div>
+        </div>
+
+        <script src="CreatePrescription.js"></script>
+    </body>
+</html>

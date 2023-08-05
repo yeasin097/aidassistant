@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <title> Doctor Home </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleDoctorHome.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="images/Aidassistantredfavicon.png">
+    </head>
+
+    <body>
+        
+        <div class="sidebar active">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="images/Aidassistantred.png" height="50px" width="50px">
+                    <div class="logo_name">Aid Assistant</div>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav_list" type="none">
+                <li>
+                <button class="item active" id="current">
+                    <a href="#">
+                        <i class='bx bxs-user'></i>
+                        <span class="link_name"> Profile </span>
+                    </a>
+                    <span class="tooltip">Profile</span>
+                </button>
+                </li>
+                <!--<li>
+                <button class="item">
+                    <a href="#">
+                        <i class='bx bx-search-alt-2'></i>
+                        <span class="link_name"> Search Patient </span>
+                    </a>
+                    <span class="tooltip">Search Patient</span>
+                </button>
+                </li>-->
+                <li>
+                <button  class="item">
+                    <a href="#">
+                        <i class='bx bxs-edit-alt'></i>
+                        <span class="link_name"> Edit Profile </span>
+                    </a>
+                    <span class="tooltip">Edit Profile</span>
+                </button>
+                </li>
+                
+            </ul>
+            <div class="profile_content">
+                <div class="profile">
+                    <div class="profile_details">
+                        <img src="images/doctoricon.png" id="photo">
+                        <div class="name"> <%=logged_user.first_name + " "+ logged_user.last_name%> </div>
+                    </div>
+                    <a href="DoctorLogin.html"><i class='bx bx-log-out' id="log_out"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home_content">
+
+            <div class="doctor_profile" id="doctorprofile">
+                <div class="doctor_info">
+                    <h1 id="ph"> Doctor Information</h1>
+                    
+                    <img src="images/docmale.webp" id="doctor_image">
+                    
+                    <div class="information_box">
+                        <p class="label name"> Name </p>
+                        <p class="info name"> <%=logged_user.first_name + " "+ logged_user.last_name%> </p>
+                    </div>
+                    
+                    <div class="information_box">
+                        <p class="label speciality"> Speciality </p>
+                        <p class="info speciality"> <%=logged_user.speciality%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label medicalname"> Medical Name </p>
+                        <p class="info medicalname"> <%=logged_user.medical_name%> </p>
+                    </div>
+                    <br>
+                    <div class="information_box">
+                        <p class="label patienttreat"> Patient Treated </p>
+                        <p class="info patienttreat">  <%= logged_user.patient_treated %>  </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label email"> Email </p>
+                        <p class="info email"> <%=logged_user.email%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label dob"> Date of Birth </p>
+                        <p class="info dob"> <%=logged_user.date_of_birth%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label mobile"> Mobile Number </p>
+                        <p class="info mobile"> <%=logged_user.mobile_no%> </p>
+                    </div>
+                    <div class="information_box">
+                        <% const birth_date = new Date(logged_user.date_of_birth) %>
+                        <% const current_date = new Date() %>
+                        <p class="label age"> Age </p>
+                        <p class="info age"> <%= current_date.getFullYear()-birth_date.getFullYear() %> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label gender"> Gender </p>
+                        <p class="info gender"> <%=logged_user.gender%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label address"> Address </p>
+                        <p class="info address"> <%=logged_user.thana + ", " + logged_user.district + ", " + logged_user.division%> </p>
+                    </div>
+                    <div class="information_box">
+                        <p class="label eduqua"> Educational Qualifications </p>
+                        <p class="info eduqua" id="eduqua">
+
+                          <% qualificationData.forEach(qualification => { %>
+                          
+                              
+                              <p class="degree"> <%= qualification.name_of_Degree %> </p>
+                              <p class="year"> <%= qualification.passing_year %> </p>
+                              <p class="medname"> <%= qualification.medical_name %> </p>
+              
+                          <% }) %>
+    
+                        </p>
+                    </div>
+                </div>
+                
+         
+                <div class="searchb">
+                    <!-- <a href="DoctorHome.html"><i class='bx bxs-home'></i></a> -->
+                    
+                    <form action="searchPatients" method="post">
+                        <div class="searchbar">
+                            <input type="text" name="patient_s" id="patient_s" placeholder="Enter Patient ID">
+                            <button class="searchbutton" type="submit"><i class='bx bx-search'></i></button>
+                        </div>
+                    </form>
+                </div>
+           
+                
+
+            </div>
+
+           
+           
+
+            <div class="doctor_edit_profile" id="doctoreditprofile">
+                <div class="edit_profile" id="edit_prof">
+                    <h1 id="ph"> Edit Profile </h1>
+                <form action="editBasicDoctor" method="post">
+                    <div class="editflex">
+                        <div class="left">
+                            <div class="edit_box">
+                                <p class="edit pass"> Change Password </p>
+                                <input type="password" id="editpass" name="editpass" class="change" placeholder="New Password">
+                                <input type="checkbox" onclick="ShowPass()" id="show"><span id="showp">Show</span>
+                            </div>
+                            <div class="edit_box">
+                                <p class="edit confirmpass"> Confirm Password </p>
+                                <input type="password" id="editconfirmpass" name="editconfirmpass" class="change" placeholder="Confirm New Password">
+                                <input type="checkbox" onclick="ShowCPass()" id="show"><span id="showp">Show</span>
+                            </div>
+                            <div class="edit_box">
+                                <p class="edit mobile"> Mobile Number </p>
+                                <input type="tel" id="editmobile" name="editmobile" class="change" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="edit_box">
+                                <p class="edit address"> Address </p>
+                                <input type="text" id="editthana" name="editthana"  class="change" placeholder="Thana"><br>
+                                <input type="text" id="editdistrict" name="editdistrict" class="change" placeholder="District"><br>
+                                <input type="text" id="editdivision" name="editdivision" class="change" placeholder="Division">
+                            </div>
+                            <!-- <div class="edit_box">
+                                <div class="textfield image">
+                                    <p class="edit image"> Image </p>
+                                    <input type="file" id="editimage" class="change">
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <button class="savebutton" type="submit" onclick="Check()">Save Changes</button>
+                </form>
+
+                <form action="addQualification" method="post">
+                    <div class="edit_box">
+                        <p class="edit eduqua"> Educational Qualifications </p>
+                        <input type="text" id="editdegree" name="editdegree" class="change" placeholder="Name of Degree"><br>
+                        <input type="text" id="edityear" name="edityear" class="change" placeholder="Year of Passing"><br>
+                        <input type="text" id="editmedical" name="editmedical" class="change" placeholder="Medical Name">
+                    </div>
+                    <button class="savebutton" id="addqua" type="submit" onclick="Check()">Add Qualifications</button>
+                </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    <script src="DoctorHome.js"></script>
+    <script>
+        // JavaScript code within the EJS file
+        const showButton = document.getElementById('searchbutton');
+        const hiddenDiv = document.getElementById('hiddenResult');
+      
+        showButton.addEventListener('click', () => {
+          // Toggle the visibility of the hidden div when the button is clicked
+          if (hiddenDiv.style.display === 'none') {
+            const searchID = document.getElementById('searchPatient');
+            const id_p = searchID.value;
+            const htmlToAdd = `
+          <% searchResult.forEach(function(item) { %>
+            <div>
+              <% if (item.patient_id == 10000) { %>
+                <p><%= item.email %></p>
+                <p><%= item.thana %></p>
+              <% } %>
+            </div>
+          <% }) %>`;
+            hiddenDiv.innerHTML += htmlToAdd;
+            hiddenDiv.style.display = 'block'; // Show the div
+          }
+        });
+      </script>
+
+
+
+    </body>
+</html>

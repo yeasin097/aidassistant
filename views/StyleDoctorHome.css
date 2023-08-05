@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    
+    background-color: #fff;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 110px;
+    background: #083546;
+    padding: 1% 2%;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 285px;
+}
+.sidebar .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+}
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+}
+
+.logo_content .logo img{
+    margin-right: 1%;
+}
+.logo_content .logo .logo_name{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.logo_content #btn{
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    top: 3.5%;
+    left: 59%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    transform: translateX(-40%);
+}
+.logo_content #btn:hover{
+    border-radius: 12px;
+    background: #fff;
+    color: #083546;
+    cursor: pointer;
+}
+.sidebar.active .logo_content #btn{
+    left: 88%;
+}
+.sidebar ul{
+    margin-top: 15%;
+}
+.sidebar ul button{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 3.2px 12px;
+    list-style: none;
+    border: 0;
+    font-size: 1rem;
+    line-height: 50px;
+    outline: none;
+    box-shadow: none;
+    background: #083546;
+}
+
+.sidebar.active ul li:hover .tooltip{
+    display: none;
+}
+.sidebar ul li .tooltip{
+    visibility: hidden;
+    position: absolute;
+    left:  70px;
+    top: 0;
+    line-height: 30px;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    pointer-events: none;
+    z-index: 10;
+}
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+    visibility: none;
+}
+
+.sidebar ul .active a{
+    color: #083546;
+    background: #fff;
+}
+.sidebar ul li a .link_name{
+    display: none;
+}
+.sidebar.active ul li a .link_name{
+    display: block;
+}
+.sidebar ul li a{
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+    color: #083546;
+    background: #fff;
+}
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+.sidebar .profile_content{
+    display: inline;
+    position: absolute;
+    bottom: 3%;
+    left: 15%;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 12px;
+    line-height: 50px;
+    transition: all 0.4s ease;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    align-items: center;
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    background: #fff;
+    border-radius: 50%;
+}
+.profile .profile_details .name{
+    margin-left: 10px;
+}
+.sidebar.active .profile #log_out{
+    left: 75%;
+}
+.profile #log_out{
+    position: absolute;
+    left: 35%;
+    bottom: 3%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    border-radius: 12px;
+
+}
+.profile a{
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.profile a i:hover{
+    color: #083546;
+    background: #fff;
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100%-110px);
+    left: 110px;
+    margin: 1.5%;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+.sidebar.active ~ .home_content{
+    width: calc(100%-285px);
+    left: 285px;
+    
+}
+.doctor_profile{
+    display: flex;
+    flex-direction: row;
+}
+.doctor_info{
+    width:900px;
+    margin-right: 2%;
+
+}
+
+.rightsidecontent{
+    flex-grow: 1;
+}
+
+#ph{
+    font-size: 3rem;
+    margin-bottom: 3%;
+    color: #083546;
+   
+}
+.doctor_info #doctor_image{
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+.information_box{
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+ .information_box .label {
+    color:#cc0001;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+ .information_box .info{
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+ .information_box.disease{
+    margin-top: 140px;
+}
+p.degree {
+    font-weight: bold;
+    font-size: 25px;
+}
+p.year {
+    font-size: 25px;
+}
+p.medname {
+    font-size: 25px;
+
+}
+
+#patient_s{
+    font-size: 25px;
+    margin-top: 20px;
+    width: 250px;
+}
+input{
+    padding-left: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+.searchbar{
+    display: flex;
+    flex-direction: row;
+}
+.searchbutton i{
+    padding-top: 0px;
+
+}
+.searchbutton{
+    font-weight: 900;
+    padding-top: 15px;
+    font-size: 35px;
+    margin-left: 0px;
+    color: #cc0001;
+    outline: none;
+    border: 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+.searchbutton:hover{
+    cursor: pointer;
+    color: #083546;
+}
+.patientinfo .table-item.td1{
+    width: 40%;
+}
+
+.patientinfo{
+    background-image: linear-gradient(to right , #083546, #1d2026);
+    border-radius: 15px;
+    width: 800px;
+    margin-top: 30px;
+    color: #fff;
+}
+#patientimg{
+    height: 200px;
+    width: 200px;
+    margin-left:50px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#patientid{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+#patientname, #patientmobile, #patientage{
+    font-size: 25px;
+    color: #fff;
+}
+#patientdisease, #patientallergy{
+    font-size: 30px;
+    font-weight: 900;
+    color: #59b3cc;
+    vertical-align: top;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+#patientdisease li, #patientallergy li{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 400;
+}
+#createprescription{
+    text-align: center;
+    padding-bottom: 20px;
+}
+#create{
+    border: none;
+    outline: none;
+    background: #cc0001;
+    color:#fff;
+    width: 450px;
+    font-size: 25px;
+    padding: 3%;
+    border-radius: 14px;
+    cursor: pointer;
+}
+#create a{
+    color: #fff;
+    text-decoration: none;
+}
+#create:hover{
+    background-color:#083546;
+}
+.edit_box .edit {
+    color:#59b3cc;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.change{
+    width: 500px;
+}
+.edit_box input{
+    padding-left: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#showp{
+    font-size: 20px;
+    margin-right: 50px;
+}
+.editflex{
+    display: flex;
+}
+.savebutton{
+    margin-left: 500px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    border: none;
+    outline: none;
+    background: #cc0001;
+    color:#fff;
+    width: 300px;
+    font-size: 30px;
+    padding: 15px 25px 15px 25px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.savebutton:hover{
+    background-color:#083546;
+}
+#addqua{
+    width: 400px;
+    margin-left: 450px;
+}
+
+
+.ysearchbar{
+    text-align: center
+}
+.ysearchbar .bx.bxs-home{
+    margin-right: 20px;
+    color: #083546;
+    font-size: 25px;
+}
+.ysearchbutton i{
+    padding-top: 0px;
+    margin-left: 10px;
+
+}
+.ysearchbutton{
+    font-weight: 900;
+    font-size: 40px;
+    margin-left: 0px;
+    color: #083546;
+    /*border-radius: 50%;*/
+    outline: none;
+    border: 0;
+    background-color: #fff;
+}
+.ysearchbutton a{
+    color: #083546;
+}
+.ysearchbutton a:hover{
+    cursor: pointer;
+    color: #cc0001;
+}

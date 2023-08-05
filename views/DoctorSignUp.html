@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title> Doctor Signup</title>
+        <link rel="stylesheet" href="StyleDoctorSignUp.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="images/Aidassistantredfavicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="login-link">
+                <div class="logo">
+                    <a href="Homepage.html"><img src="images/Aidassistantred.png" height="150px" width="150px"></a>
+                    <!--<span class="logoname">Aid Assistant</span>-->
+                </div>
+                <p class="leftbigheading">Already have an account?</p>
+                <a href="DoctorLogin.html" class="loginbtn">Login</a>
+            </div>
+            <form action="DoctorSignUp.html" method="post" class="signupformcontainer">
+                <p class="bigheading"> Create Account </p>
+                <div class="progress-bar">
+                    <div class="stage">
+                        <p class="tool-tip"> Personal Info </p>
+                        <p class="stageno stageno-1">1</p>
+                    </div>
+                    <div class="stage">
+                        <p class="tool-tip"> Contact Info </p>
+                        <p class="stageno stageno-2">2</p>
+                    </div>
+                    <div class="stage">
+                        <p class="tool-tip"> Doctor Info </p>
+                        <p class="stageno stageno-3">3</p>
+                    </div>
+                    <div class="stage">
+                        <p class="tool-tip"> Confirmation </p>
+                        <p class="stageno stageno-4">4</p>
+                    </div>
+                </div>
+
+                <div class="signup-form-content">
+                    <div class="stage1-content">
+                        <div class="button-container">
+                            <div class="textfield fname">
+                                <label for="fname"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="fname" id="fname" placeholder="Enter First Name"> 
+                            </div>
+                            <div class="textfield lname">
+                                <label for="lname"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="lname" id="lname" placeholder="Enter Last Name"> 
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <div class="textfield dob">
+                                <label for="dob"><i class='bx bx-calendar'></i></label>
+                                <input type="date" name="dob" id="dob" placeholder="MM/DD/YYYY"> 
+                            </div>
+                            <div class="gender-selection">
+                                <p class="fieldheading"> Gender </p>
+                                <label for="male">
+                                    <input type="radio" name="gender" id="male" value="male">Male
+                                </label>
+                                <label for="female">
+                                    <input type="radio" name="gender" id="female" value="female">Female
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <div class="textfield mobileno">
+                                <label for="mobileno"><i class='bx bxs-mobile' ></i></label>
+                                <input type="tel" name="mobileno" id="mobileno" placeholder="Enter Mobile Number"> 
+                            </div>
+                        </div>
+                        <div class="pagebtns">
+                            <button type="button" class="Previous"> Previous </button>
+                            <button type="button" class="Next" onclick="stage1to2()"> Next </button>
+                        </div>
+
+                    </div>
+                    <div class="stage2-content">
+                        <div class="button-container">
+                            <div class="textfield email">
+                                <label for="email"><i class='bx bxs-envelope'></i></label>
+                                <input type="email" name="email" id="email" placeholder="Enter Email"> 
+                            </div>
+                            <div class="textfield password">
+                                <label for="password"><i class='bx bxs-lock-alt'></i></label>
+                                <input type="password" name="password" id="password" placeholder="Enter Password"> 
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <div class="textfield confirmpassword">
+                                <label for="cpassword"><i class='bx bxs-lock-alt'></i></label>
+                                <input type="password" name="cpassword" id="cpassword" placeholder="Re-enter Password"> 
+                            </div>
+                            <div class="textfield division">
+                                <label for="divison"><i class='bx bxs-location-plus'></i></label>
+                                <input type="text" name="division" id="division" placeholder="Enter Division"> 
+                            </div>
+                        </div>
+                        
+                        <div class="button-container">
+                            <div class="textfield district">
+                                <label for="district"><i class='bx bxs-location-plus'></i></label>
+                                <input type="text" name="district" id="district" placeholder="Enter District"> 
+                            </div>
+                            <div class="textfield thana">
+                                <label for="thana"><i class='bx bxs-location-plus'></i></label>
+                                <input type="text" name="thana" id="thana" placeholder="Enter Thana"> 
+                            </div>
+                        </div>
+
+                        <div class="pagebtns">
+                            <button type="button" class="Previous2" onclick="stage2to1()"> Previous </button>
+                            <button type="button" class="Next2" onclick="stage2to3()"> Next </button>
+                        </div>
+                    </div>
+                    <div class="stage3-content">
+                        <div class="button-container">
+                            <div class="textfield bmdc">
+                                <label for="bmdc"><i class='bx bxs-info-circle' ></i></label>
+                                <input type="number" name="bmdc" id="bmdc" placeholder="Enter BMDC Number"> 
+                            </div>
+                            <div class="textfield verification">
+                                <label for="verification"><i class='bx bxs-info-circle' ></i></label>
+                                <input type="number" name="verification" id="verification" placeholder="Enter Verification"> 
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <div class="textfield speciality">
+                                <label for="speciality"><i class='bx bxs-info-circle' ></i></label>
+                                <input type="text" name="speciality" id="speciality" placeholder="Enter Speciality"> 
+                            </div>
+                            <div class="textfield medicalname">
+                                <label for="medicalname"><i class='bx bxs-info-circle' ></i></label>
+                                <input type="text" name="medicalname" id="medicalname" placeholder="Enter Medical Name"> 
+                            </div>
+                        </div>
+
+                        <div class="pagebtns">
+                            <button type="button" class="Previous3" onclick="stage3to2()"> Previous </button>
+                            <button type="button" class="Next3" onclick="stage3to4()"> Next </button>
+                        </div>
+                    </div>
+                    <div class="stage4-content">
+                        <div class="tc-content">
+                            <label for="tc" class="tc">
+                                <input type="checkbox" name="tc" id="tc" required>
+                                By submitting your details, you agree to the <a href="">term and conditions</a>.
+                            </label>
+                        </div>
+                        <div class="pagebtns">
+                            <button type="button" class="Previous4" onclick="stage4to3()"> Previous </button>
+                            <button type="submit" class="Next4"> Submit </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+
+        </div>
+        
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="DoctorSignUp.js"></script>
+    </body>
+
+
+
+</html>
