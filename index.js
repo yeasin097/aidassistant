@@ -1,4 +1,4 @@
-const express = require('express');
+ const express = require('express');
 
 const mongo = require("./mongoDB")
 const PatientDatabsae = require("./patientSchema");
@@ -11,7 +11,7 @@ const fs=require("fs");
 const PDFDocument = require('pdfkit');
 
 const multer =  require("multer");
-const path = require("path");
+ const path = require("path");
 const imageSchema=require("./imageSchema");
 
 
@@ -25,13 +25,14 @@ var image_obj;
 
 
 
-// doc.pipe(fs.createWriteStream("prescription.pdf"));
+// // doc.pipe(fs.createWriteStream("prescription.pdf"));
 
 app.use(express.urlencoded({extended: false}))
 
-app.use(express.static('views'));
+app.use(express.static(__dirname + "/views"));
 
 app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, "views"));
 
 
 var storage = multer.diskStorage({
@@ -45,13 +46,11 @@ var storage = multer.diskStorage({
 
 var upload = multer({storage:storage});
 
-app.get("/Homepage.html", (req, res)=> {
-    res.redirect("/index.html");
-})
 
 app.get("/", (req, res)=> {
-    res.redirect("/index.html");
+    res.render("index");
 })
+
 
 
 
