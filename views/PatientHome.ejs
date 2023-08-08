@@ -168,7 +168,11 @@
                     
                     <div class="information_box disease">
                         <p class="label disease"> Disease History </p>
-                        <p class="info disease" id="disease"> </p>
+                        <ul style="list-style: none; padding: 20px;">
+                            <% for (let i = 0; i < object_disease.length; i++) { %>
+                              <li style="padding: 10px;"><%= object_disease[i] %></li>
+                            <% } %>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -263,17 +267,17 @@
                                             <td class="table-item td1" rowspan="3">
                                                 <img src="images/capsuleicon.webp" id="medimg">
                                             </td>
-                                            <td class="table-item td2" id="medtype"> <%= medicine.type %> </td>
-                                            <td class="table-item td3" id="medname" colspan="3"> <%= medicine.name %> </td>
+                                            <td class="table-item td2" id="medtype"><%= medicine.type %> </td>
+                                            <td class="table-item td3" id="medname" colspan="3"><%= medicine.name %> </td>
                                         </tr>
                                         <tr class="table-item tr2">
-                                            <td class="table-item td4" id="medquantity"> <%= medicine.quantity %> </td>
-                                            <td class="table-item td5" id="medtimes"> <%= medicine.times %> </td>
+                                            <td class="table-item td4" id="medquantity">Quantity: <%= medicine.quantity %> </td>
+                                            <td class="table-item td5" id="medtimes">Times: <%= medicine.times %> </td>
                                             <td class="table-item td6"></td>
-                                            <td class="table-item td7" id="medduration"> <%= medicine.duration %> </td>
+                                            <td class="table-item td7" id="medduration">Duration: <%= medicine.duration %> </td>
                                         </tr>
                                         <tr class="table-item tr3">
-                                            <td class="table-item td8" id="medcomment" colspan="4" rowspan="2">  <%= medicine.comment || '-' %> </td>
+                                            <td class="table-item td8" id="medcomment" colspan="4" rowspan="2">Comment: <%= medicine.comment || '-' %> </td>
                                         </tr>
                                     </table>
                                 </div>
