@@ -78,7 +78,7 @@
                             </div>
                             <div class="textfield image">
                                 <label for="image"><i class='bx bxs-image-add' ></i></label>
-                                <input type="file" id="image" name="image">
+                                <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg">
                             </div>
                         </div>
 
@@ -107,18 +107,35 @@
                             </div>
                             <div class="textfield division">
                                 <label for="divison"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="division" id="division" placeholder="Enter Division"> 
+                                <!--<input type="text" name="division" id="division" placeholder="Enter Division"> -->
+                                <select name="division" id="division" onchange="divisionsList();">
+                                    <option disabled selected>Select Division</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                </select>
                             </div>
                         </div>
                         
                         <div class="button-container">
                             <div class="textfield district">
                                 <label for="district"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="district" id="district" placeholder="Enter District"> 
+                                <!-- <input type="text" name="district" id="district" placeholder="Enter District"> -->
+                                <select name="district" id="district" onchange="thanaList()">
+                                    <option disabled selected>Select division first</option>
+                                </select>
                             </div>
                             <div class="textfield thana">
                                 <label for="thana"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="thana" id="thana" placeholder="Enter Thana"> 
+                                <!-- <input type="text" name="thana" id="thana" placeholder="Enter Thana"> -->
+                                <select name="thana" id="thana">
+                                    <option disabled selected value="">Select district first</option>
+                                </select>
                             </div>
                         </div>
 
@@ -131,7 +148,18 @@
                         <div class="button-container">
                             <div class="textfield bloodgrp">
                                 <label for="bloodgrp"><i class='bx bxs-info-circle' ></i></label>
-                                <input type="text" name="bloodgrp" id="bloodgrp" placeholder="Enter Blood Group"> 
+                                <!-- <input type="text" name="bloodgrp" id="bloodgrp" placeholder="Enter Blood Group"> -->
+                                <select name="bloodgrp" id="bloodgrp">
+                                    <option disabled selected>Select Blood Group</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
                             </div>
                             <div class="textfield height">
                                 <label for="location"><i class='bx bxs-info-circle' ></i></label>
@@ -184,6 +212,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="PatientSignUp.js"></script>
+    <script src="location.js"> </script>
     </body>
 
 
