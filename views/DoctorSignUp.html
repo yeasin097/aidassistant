@@ -100,18 +100,35 @@
                             </div>
                             <div class="textfield division">
                                 <label for="divison"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="division" id="division" placeholder="Enter Division"> 
+                                <!--<input type="text" name="division" id="division" placeholder="Enter Division"> -->
+                                <select name="division" id="division" onchange="divisionsList();">
+                                    <option disabled selected>Select Division</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                </select>
                             </div>
                         </div>
                         
                         <div class="button-container">
                             <div class="textfield district">
                                 <label for="district"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="district" id="district" placeholder="Enter District"> 
+                                <!-- <input type="text" name="district" id="district" placeholder="Enter District"> -->
+                                <select name="district" id="district" onchange="thanaList()">
+                                    <option disabled selected>Select division first</option>
+                                </select>
                             </div>
                             <div class="textfield thana">
                                 <label for="thana"><i class='bx bxs-location-plus'></i></label>
-                                <input type="text" name="thana" id="thana" placeholder="Enter Thana"> 
+                                <!-- <input type="text" name="thana" id="thana" placeholder="Enter Thana"> -->
+                                <select name="thana" id="thana">
+                                    <option disabled selected value="">Select district first</option>
+                                </select>
                             </div>
                         </div>
 
@@ -135,11 +152,58 @@
                         <div class="button-container">
                             <div class="textfield speciality">
                                 <label for="speciality"><i class='bx bxs-info-circle' ></i></label>
-                                <input type="text" name="speciality" id="speciality" placeholder="Enter Speciality"> 
+                                <select id="speciality" name="speciality" placeholder="Enter Speciality">
+                                    <option disabled selected>Select Speciality </option>
+                                    <option value="Cardiology(Heart)">Cardiology(Heart)</option>
+                                    <option value="Dental">Dental</option>
+                                    <option value="Dermatology(Skin)">Dermatology(Skin)</option>
+                                    <option value="Endocrinology(Hormone)">Endocrinology(Hormone)</option>
+                                    <option value="Gastroenterologist(Stomach)">Gastroenterologist(Stomach)</option>
+                                    <option value="Gynecology">Gynecology</option>
+                                    <option value="Medicine">Medicine</option>
+                                    <option value="Nephrology(Kidney)">Nephrology(Kidney)</option>
+                                    <option value="Neurology(Brain)">Neurology(Brain)</option>
+                                    <option value="Ophthalmology(Eye)">Ophthalmology(Eye)</option>
+                                    <option value="Otolaryngology(Nose Ear Neck)">Otolaryngology(Nose Ear Neck)</option>
+                                    <option value="Osteology(Bones)">Osteology(Bones)</option>
+                                    <option value="Pediatrics(Infant)">Pediatrics(Infant)</option>
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="Surgeon">Surgeon</option>
+                                </select>
                             </div>
                             <div class="textfield medicalname">
                                 <label for="medicalname"><i class='bx bxs-info-circle' ></i></label>
-                                <input type="text" name="medicalname" id="medicalname" placeholder="Enter Medical Name"> 
+                                <!--<input type="text" name="medicalname" id="medicalname" placeholder="Enter Medical Name"> -->
+                                <select name="medicalname" id="medicalname">
+                                    <option value="" disabled selected>Select Medical Name</option>                                    
+                                    <option value="Ad-din Akij Medical College Hospital">Ad-din Akij Medical College Hospital</option>
+                                    <option value="Ad-din Sakina Medical College Hospital">Ad-din Sakina Medical College Hospital</option>
+                                    <option value="Ad-din Womens Medical College Hospital">Ad-din Womens Medical College Hospital</option>
+                                    <option value="Aichi Hospital">Aichi Hospital</option>
+                                    <option value="Al Haramain Hospital">Al Haramain Hospital</option>
+                                    <option value="Ambia Memorial Hospital">Ambia Memorial Hospital</option>
+                                    <option value="Anwer Khan Modern Hospital Ltd">Anwer Khan Modern Hospital Ltd</option>
+                                    <option value="Apollo Hospitals Dhaka">Apollo Hospitals Dhaka</option>
+                                    <option value="Bangladesh Medical College Hospital">Bangladesh Medical College Hospital</option>
+                                    <option value="CHEVRON">CHEVRON</option>
+                                    <option value="Chittagong Maa-Shishu General Hospital">Chittagong Maa-Shishu General Hospital</option>
+                                    <option value="Chittagong Medical College">Chittagong Medical College</option>
+                                    <option value="CSCR">CSCR</option>
+                                    <option value="Cumilla Medical College">Cumilla Medical College</option>
+                                    <option value="Dhaka Community Hospital">Dhaka Community Hospital</option>
+                                    <option value="Khulna Medical College Hospital">Khulna Medical College Hospital</option>
+                                    <option value="Mymensingh Medical College">Mymensingh Medical College</option>
+                                    <option value="National Hospital">National Hospital</option>
+                                    <option value="Pongu Hospital Jessore">Pongu Hospital Jessore</option>
+                                    <option value="Popular Specialized Hospital Ltd">Popular Specialized Hospital Ltd.</option>
+                                    <option value="Rajshahi Medical College Hospital">Rajshahi Medical College Hospital</option>
+                                    <option value="Royal Hospital">Royal Hospital</option>
+                                    <option value="Siddiqia Eye Foundation">Siddiqia Eye Foundation</option>
+                                    <option value="Sir Salimullah Medical College">Sir Salimullah Medical College</option>
+                                    <option value="Shaheed Suhrawardy Medical College">Shaheed Suhrawardy Medical College</option>
+                                    <option value="Sher-E-Bangla Medical College">Sher-E-Bangla Medical College</option>
+                                    <option value="Surgiscope Pvt. Ltd.">Surgiscope Pvt. Ltd.</option>
+                                </select>
                             </div>
                         </div>
 
@@ -171,6 +235,7 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="DoctorSignUp.js"></script>
+    <script src="location.js"></script>
     </body>
 
 
