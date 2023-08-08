@@ -4,6 +4,22 @@ function toggleMenu(){
     subMenu.classList.toggle("open-menu");
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const anchorLinks = document.querySelectorAll('a#hometrans');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+
 
 var btn=document.getElementsByClassName("btn");
 var banner=document.getElementById("banner");
