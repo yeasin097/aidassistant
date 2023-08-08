@@ -127,12 +127,28 @@ app.get("/PatientHome", async(req, res)=> {
     const reportList = await reportSchema.find({patient_id:logged_user_patient.patient_id});
     const prescriptionData = await doctorPrescripton.findOne({ patient_id: logged_user_patient.patient_id }).exec();
     logged_user_patient = await PatientDatabsae.findOne({email:logged_user_patient.email});
+
+
+ let object_disease = [];
+    const prescriptions = await doctorPrescripton.find({
+        patient_id: logged_user_patient.patient_id
+      });
+  
+      // Extract diseases from each prescription document and store them in a one-dimensional array
+      object_disease = prescriptions.reduce((acc, curr) => {
+        const diseases = Object.values(curr.diseases);
+        acc.push(...diseases);
+        return acc;
+      }, []);
+
+ 
     res.render("PatientHome", {
         logged_user:logged_user_patient,
         imageobj:image_obj,
         prescriptions: prescriptionList,
         reports: reportList,
-        prescriptionData:prescriptionData
+        prescriptionData:prescriptionData,
+        object_disease: object_disease,
     });
 });
 
