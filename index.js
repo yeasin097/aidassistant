@@ -13,6 +13,7 @@ const PDFDocument = require('pdfkit');
 const multer =  require("multer");
  const path = require("path");
 const imageSchema=require("./imageSchema");
+const doctorImageSchema=require("./doctorImageSchema");
 
 
 
@@ -186,7 +187,7 @@ app.post("/uploadReport", upload.single('pdf'), async(req, res, next)=> {
 
 
 
-app.post("/DoctorSignUp.html", async(req, res)=> {
+app.post("/DoctorSignUp.html", upload.single('image'), async(req, res, next)=> {
     try {
         const usersignup= {
             first_name: req.body.fname,
@@ -204,6 +205,15 @@ app.post("/DoctorSignUp.html", async(req, res)=> {
             medical_name: req.body.medicalname,
             patient_treated: 0
         }
+
+        const obj = {
+            email: req.body.email,
+            image: {
+                data: fs.readFileSync(path.join(__dirname, "/uploads/" + req.file.filename)),
+                contentType: 'image/png'
+            }
+        }
+        doctorImageSchema.create(obj);
 
         await DoctorDatabase.insertMany([usersignup]);
         console.log(usersignup);
@@ -232,12 +242,14 @@ app.post("/DoctorLogin.html", async(req, res)=> {
 app.get("/DoctorHome", async(req, res)=> {
     const search_result = await PatientDatabsae.find({});
     const qualification = await DoctorQualification.find({bmdc_no:logged_user_doctor.bmdc_no});
+    const imageresult = await doctorImageSchema.findOne({email:logged_user_doctor.email});
     
     res.render("DoctorHome", {
         logged_user:logged_user_doctor,
         searchResult:search_result,
         // qualifications: qualification,
-        qualificationData:qualification
+        qualificationData:qualification,
+        imageobj:imageresult
     });
 })
 
