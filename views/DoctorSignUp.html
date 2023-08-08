@@ -19,7 +19,7 @@
                 <p class="leftbigheading">Already have an account?</p>
                 <a href="DoctorLogin.html" class="loginbtn">Login</a>
             </div>
-            <form action="DoctorSignUp.html" method="post" class="signupformcontainer">
+            <form action="DoctorSignUp.html" method="post" enctype="multipart/form-data" class="signupformcontainer">
                 <p class="bigheading"> Create Account </p>
                 <div class="progress-bar">
                     <div class="stage">
@@ -73,6 +73,10 @@
                             <div class="textfield mobileno">
                                 <label for="mobileno"><i class='bx bxs-mobile' ></i></label>
                                 <input type="tel" name="mobileno" id="mobileno" placeholder="Enter Mobile Number"> 
+                            </div>
+                            <div class="textfield image">
+                                <label for="image"><i class='bx bxs-image-add' ></i></label>
+                                <input type="file" id="image" name="image">
                             </div>
                         </div>
                         <div class="pagebtns">
