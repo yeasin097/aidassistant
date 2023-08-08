@@ -142,10 +142,11 @@
                         <p class="info weight"> <%=logged_user.weight%> </p>
                     </div>
                     <div class="information_box">
-                        <% var wei=logged_user.weight %>
-                        <% var len=logged_user.height/100 %>
+                        <% var wei = logged_user.weight %>
+                        <% var len = logged_user.height / 100 %>
                         <p class="label bmi"> Body Mass Index (BMI) </p>
-                        <p class="info bmi"> <%= wei/(len*len)%> </p>
+                        <% var bmi = (wei / (len * len)).toFixed(3); %>
+                        <p class="info bmi"> <%= bmi %> </p>
                     </div>
                     <div class="information_box">
                         <p class="label allergy"> Allergies </p>
