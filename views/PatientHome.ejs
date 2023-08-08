@@ -253,6 +253,7 @@
             <div class="patient_medicine_list" id="patientmedicinelist">
                 <div class="medicine_list" id="med_list">
                     <h1 id="ph"> Medicine List </h1>
+                    <% if (prescriptionData!=null) { %>
                         <% if (prescriptionData.medicines && prescriptionData.medicines.length > 0) { %>
                             <% prescriptionData.medicines.forEach(medicine => { %>
                                 <div class="med_bar">
@@ -277,6 +278,7 @@
                                 </div>
 
                             <% }) %>
+                            <% } %>
                         <% } else { %>
                             No medicines prescribed
                         <% } %>
