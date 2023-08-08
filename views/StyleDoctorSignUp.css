@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Maven Pro", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 body{
     display: flex;
@@ -24,7 +24,7 @@ body{
     background: #fff;
 }
 .login-link{
-    background-color: #125973;
+    background-color: #175369;
     background-image: url("images/docmale.webp");
     background-position: bottom center;
     background-size: 300px;
@@ -67,23 +67,23 @@ body{
     border: 2px solid #eff0ff;
     border-radius: 24px;
     padding: 3% 0;
-    background-color: #125973;
+    background-color: #175369;
 }
 .loginbtn:hover{
     background-color: #eff0ff;
-    color: #125973;
+    color: #175369;
     cursor: pointer;
 }
 .bigheading{
     font-weight: 900;
     font-size: 43px;
-    color: #125973;
+    color: #175369;
 }
 .progress-bar{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4% 0;
+    margin: 15px 0;
     width: 70%;
 }
 .progress-bar .stage{
@@ -94,7 +94,7 @@ body{
     flex-direction: column;
 }
 .progress-bar .tool-tip{
-    color: #125973;
+    color: #175369;
     font-weight: 600;
 }
 .stageno{
@@ -106,26 +106,38 @@ body{
 .button-container{
     display: flex;
     align-items: center;
-    margin: 4% 0;
+    margin: 20px 0;
 }
 .textfield{
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid #083546;
     padding: 2%;
     margin: 0 2%;
-    width: 48%;
+    width: 370px;
     border-radius: 4px;
     color: #083546;
+}
+.textfield i{
+    color: #175369;
 }
 input{
     border: none;
     outline: none;
     background: inherit;
     color:#083546;
-    width: 200%;
+    width: 370px;
     margin-left: 4%;
     font-size: 20px;
+}
+select{
+    font-size: 20px;
+    border: 0px;
+    outline: none;
+    width: 370px;
+}
+select#medicalname{
+    width: 320px;
 }
 .signup-form-content{
     width: 100%;
@@ -142,75 +154,47 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 1;
     display: block;
     height: 20px;
-   
+    
 }
-.textfield.fname::after{
-    content: 'First Name';
-    background-color: #fff;
-    position: relative;
-    padding: 0 4%;
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 334px;
-}
-.textfield.lname::after{
-    content: 'Last Name';
-    background-color: #fff;
-    position: relative;
-    padding: 0 4%;
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 334px;
-}
-.textfield.dob::after{
-    content: 'Date of Birth';
-    background-color: #fff;
-    position: relative;
-    padding: 0 4%;
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
+
 .gender-selection{
     display: flex;
     align-items: center;
     margin-left: 4%;
     width: 100%;
-
+    font-size: 20px;
 }
 .gender-selection label{
     margin: 0 2%;
     display: flex;
     align-items: center;
     color: #000;
-    width: 20%;
+    width: 100px;
 }
 input[type="radio"]{
-    accent-color: #125973;
-    margin-right: 6%;
+    accent-color: #175369;
+    margin-right: 6px;
 }
 
 .fieldheading{
-    color: #125973;
+    color: #175369;
     width: 20%;
+    font-weight: 600;
 }
 .pagebtns{
     display:flex;
     flex-direction: row;
-
+    width: 790px;
 }
 button{
     border: none;
     outline: none;
-    background: #125973;
+    background: #175369;
     color:#fff;
     width: 100%;
     margin-left: 2%;
     font-size: 20px;
-    padding: 3%;
+    padding: 20px;
     border-radius: 14px;
     cursor: pointer;
 }
@@ -221,125 +205,16 @@ button:hover{
 .Previous{
     visibility: hidden;
 }
-.textfield.mobileno::after{
-    content: 'Mobile Number';
-    background-color: #fff;
-    position: relative;
- 
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 480px;
-}
-.textfield.email::after{
-    content: 'Email';
-    background-color: #fff;
-    position: relative;
-  
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.password::after{
-    content: 'Password';
-    background-color: #fff;
-    position: relative;
-   
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.confirmpassword::after{
-    content: 'Re-Password';
-    background-color: #fff;
-    position: relative;
 
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.division::after{
-    content: 'Division';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.district::after{
-    content: 'District';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.thana::after{
-    content: 'Thana';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.bmdc::after{
-    content: 'BMDC';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.verification::after{
-    content: 'Verification';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.speciality::after{
-    content: 'Speciality';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
-.textfield.medicalname::after{
-    content: 'Medical Name';
-    background-color: #fff;
-    position: relative;
-
-    left: -210px;
-    top: -43px;
-    color:#125973;
-    width: 380px;
-}
 .tc-content input{
     width: 4%;
     margin-left: 4%;
-    accent-color: #125973;
+    accent-color: #175369;
     margin-bottom: 4%;
 }
 .tc a{
     text-decoration: none;
-    color:#125973;
+    color:#175369;
 }
 label .tc{
     margin: 4%;
