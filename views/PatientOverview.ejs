@@ -48,22 +48,14 @@
                         </tr>
                         <tr class="tr 5" >
                             <td>
-                                <ul style="list-style: none; padding: 20px;">
-                                    <li>Diseases</li>
+                                <ul style="list-style: none;" class="info disease">
                                     <% for (let i = 0; i < object_disease.length; i++) { %>
-                                      <li style="padding: 10px;"><%= object_disease[i] %></li>
+                                      <li><%= object_disease[i] %></li>
                                     <% } %>
                                 </ul>
                             </td>
 
-                            <td>
-                                <ul style="list-style: none; padding: 20px;">
-                                    <li>Dates</li>
-                                    <% for (let i = 0; i < object_disease.length; i++) { %>
-                                      <li style="padding: 10px;"><%= object_dates[i] %></li>
-                                    <% } %>
-                                </ul>
-                            </td>
+                           
                             
                         </tr>
                         <tr>
