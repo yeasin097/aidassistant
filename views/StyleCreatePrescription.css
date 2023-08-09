@@ -131,7 +131,9 @@ select{
     outline: none;
     color: #fff;
     font-size: 20px;
-
+    margin-top: 10px;
+    margin-left: 350px;
+    border: 0px;
 }
 #create:hover{
     background-color: #083546;
