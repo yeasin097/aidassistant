@@ -149,3 +149,8 @@ input{
 #create:hover{
     background-color:#083546;
 }
+
+.tr.5{
+   font-size: 25px;
+   margin-left:20px;
+}
