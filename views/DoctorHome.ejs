@@ -65,7 +65,8 @@
                 <div class="doctor_info">
                     <h1 id="ph"> Doctor Information</h1>
                     
-                    <img  id="doctor_image" src="data:image/jpg;base64, <%= imageobj.image.data.toString('base64') %>">
+                    
+                    <img  id="doctor_image" src="data:image/jpg;base64, <%= logged_user.image.data.toString('base64') %>">
                     
                     <div class="information_box">
                         <p class="label name"> Name </p>
