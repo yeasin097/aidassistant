@@ -46,21 +46,18 @@
                             <td id="patientmobile"><span id=lb>Allergies: </span>  <%= searchResult.allergy %> </td>
                             
                         </tr>
-                        
-
-                            <td>
-                                    <span id=lb>Diseases History: </span><br>
-                                <ul style="list-style: none; padding: 20px;">
-                                    
+                        <tr>
+                            <td id="patientdisease">
+                                <span id=lb>Disease History </span> 
+                                <ul style="list-style: none">
                                     <% for (let i = 0; i < object_disease.length; i++) { %>
-                                      <li style="padding: 10px;"><%= object_disease[i] %></li>
+                                      <li"><%= object_disease[i] %></li>
                                     <% } %>
                                 </ul>
                             </td>
-
-                           
-                            
                         </tr>
+
+                         
                         <tr>
                             <td colspan="2" id="createprescription">
                                 <form action="CreatePrescription" method="post">
