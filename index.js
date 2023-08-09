@@ -299,10 +299,10 @@ app.post("/editBasicPatient", async(req, res)=> {
     updated_fields.password = req.body.editpass;
     }
     if (req.body.editheight) {
-    updated_fields.editheight = req.body.editheight;
+    updated_fields.height = req.body.editheight;
     }
     if (req.body.editweight) {
-    updated_fields.division = req.body.editweight;
+    updated_fields.weight = req.body.editweight;
     }
     if(req.body.editallergy) {
         updated_fields.allergy = req.body.editallergy + ", "+ search_result.allergy;
