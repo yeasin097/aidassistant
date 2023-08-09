@@ -109,9 +109,13 @@ input{
     font-weight: 600;
     color: #fff;
 }
-#patientname, #patientmobile, #patientage{
+#patientname, #patientmobile, #patientage, #patientdisease{
     font-size: 25px;
     color: #fff;
+}
+#patientdisease{
+    padding-top: 10px;
+    padding-left: 10px;
 }
 #patientdisease, #patientallergy{
     font-size: 30px;
