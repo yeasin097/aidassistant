@@ -247,6 +247,7 @@ app.get("/DoctorHome", async(req, res)=> {
     const search_result = await PatientDatabsae.find({});
     const qualification = await DoctorQualification.find({bmdc_no:logged_user_doctor.bmdc_no});
     const imageresult = await doctorImageSchema.findOne({email:logged_user_doctor.email});
+    logged_user_doctor = await DoctorDatabase.findOne({email:logged_user_doctor.email});
     
     res.render("DoctorHome", {
         logged_user:logged_user_doctor,
