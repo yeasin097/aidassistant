@@ -88,7 +88,7 @@ app.post("/PatientSignUp.html", upload.single('image'), async(req, res, next)=> 
         }
         imageSchema.create(obj);
         await PatientDatabsae.insertMany([usersignup]);
-        console.log(usersignup);
+       
         res.redirect("/PatientLogin.html");
     }
     catch(error) {
