@@ -309,11 +309,12 @@ app.post("/editBasicPatient", async(req, res)=> {
     }
     
 
-    updateRecordP(emailToUpdate, updated_fields);
+    await updateRecordP(emailToUpdate, updated_fields);
 
     console.log(updated_fields);
     res.redirect("/PatientHome");
 })
+
 
 
 
