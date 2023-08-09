@@ -70,6 +70,10 @@ const AidAssistant = new mongodb.Schema({
     patient_treated: {
         type: Number,
         required: true
+    },
+    image: {
+        data: Buffer,
+        contentType: String
     }
 
 });
