@@ -203,17 +203,21 @@ app.post("/DoctorSignUp.html", upload.single('image'), async(req, res, next)=> {
             bmdc_no: req.body.bmdc,
             speciality: req.body.speciality,
             medical_name: req.body.medicalname,
-            patient_treated: 0
-        }
-
-        const obj = {
-            email: req.body.email,
-            image: {
+            patient_treated: 0,
+         image: {
                 data: fs.readFileSync(path.join(__dirname, "/uploads/" + req.file.filename)),
                 contentType: 'image/png'
             }
         }
-        doctorImageSchema.create(obj);
+
+        // const obj = {
+        //     email: req.body.email,
+        //     image: {
+        //         data: fs.readFileSync(path.join(__dirname, "/uploads/" + req.file.filename)),
+        //         contentType: 'image/png'
+        //     }
+        // }
+        // doctorImageSchema.create(obj);
 
         await DoctorDatabase.insertMany([usersignup]);
         console.log(usersignup);
