@@ -49,7 +49,8 @@
                         <table class="doctorinfo">
                             <tr class="table-item tr1">
                                 <td class="table-item td1" rowspan="5">
-                                    <img src="images/docmale.webp" id="doctorimg">
+                                    
+                                    <img  id="doctorimg"> src="data:image/jpg;base64, <%= doctor.image.data.toString('base64') %>">
                                 </td>
                                 <td class="table-item td2" colspan="2" id="doctorname"> <span class="lb">Name: </span>Dr. <%=doctor.first_name + " "+ doctor.last_name%> </td>
                             </tr>
