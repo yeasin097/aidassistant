@@ -245,6 +245,7 @@ body{
     margin-left: 20px;
     margin-right: 100px;
     margin-bottom: 40px;
+    border-radius: 25px;
 }
 #donate {
     padding: 3%;
