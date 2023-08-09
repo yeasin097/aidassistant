@@ -66,7 +66,7 @@
                     <h1 id="ph"> Doctor Information</h1>
                     
                     
-                    <img  id="doctor_image" src="data:image/jpg;base64, <%= logged_user.image.data.toString('base64') %>">
+                     <img  id="doctor_image" src="data:image/jpg;base64, <%= logged_user.image.data.toString('base64') %>">
                     
                     <div class="information_box">
                         <p class="label name"> Name </p>
@@ -172,9 +172,23 @@
                         <div class="right">
                             <div class="edit_box">
                                 <p class="edit address"> Address </p>
-                                <input type="text" id="editthana" name="editthana"  class="change" placeholder="Thana"><br>
-                                <input type="text" id="editdistrict" name="editdistrict" class="change" placeholder="District"><br>
-                                <input type="text" id="editdivision" name="editdivision" class="change" placeholder="Division">
+                                <select name="editdivision" id="editdivision" class="change" onchange="divisionsList();">
+                                    <option disabled selected>Select Division</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                </select><br>
+                                <select name="editdistrict" id="editdistrict" class="change" onchange="thanaList()">
+                                    <option disabled selected>Select division first</option>
+                                </select><br>
+                                <select name="editthana" id="editthana">
+                                    <option disabled selected value="">Select district first</option>
+                                </select><br>
                             </div>
                             <!-- <div class="edit_box">
                                 <div class="textfield image">
@@ -213,31 +227,8 @@
 
 
     <script src="DoctorHome.js"></script>
-    <script>
-        // JavaScript code within the EJS file
-        const showButton = document.getElementById('searchbutton');
-        const hiddenDiv = document.getElementById('hiddenResult');
-      
-        showButton.addEventListener('click', () => {
-          // Toggle the visibility of the hidden div when the button is clicked
-          if (hiddenDiv.style.display === 'none') {
-            const searchID = document.getElementById('searchPatient');
-            const id_p = searchID.value;
-            const htmlToAdd = `
-          <% searchResult.forEach(function(item) { %>
-            <div>
-              <% if (item.patient_id == 10000) { %>
-                <p><%= item.email %></p>
-                <p><%= item.thana %></p>
-              <% } %>
-            </div>
-          <% }) %>`;
-            hiddenDiv.innerHTML += htmlToAdd;
-            hiddenDiv.style.display = 'block'; // Show the div
-          }
-        });
-      </script>
-
+    <script src="editlocation.js"></script>
+ 
 
 
     </body>
