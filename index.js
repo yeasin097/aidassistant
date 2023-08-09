@@ -282,10 +282,11 @@ app.post("/editBasicDoctor", async(req, res)=> {
 
     console.log(updated_fields);
     const search_result = await PatientDatabsae.find({});
-    res.render("DoctorHome", {
-        logged_user:logged_user_doctor,
-        searchResult:search_result
-    });
+    // res.render("DoctorHome", {
+    //     logged_user:logged_user_doctor,
+    //     searchResult:search_result
+    // });
+    res.redirect("/DoctorHome");
 })
 
 
