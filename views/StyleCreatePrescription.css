@@ -134,6 +134,7 @@ select{
     margin-top: 10px;
     margin-left: 350px;
     border: 0px;
+    cursor: pointer;
 }
 #create:hover{
     background-color: #083546;
