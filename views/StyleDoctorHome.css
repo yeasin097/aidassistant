@@ -449,3 +449,12 @@ input{
     cursor: pointer;
     color: #cc0001;
 }
+
+select{
+    outline: none;
+    width: 370px;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 2px solid;
+    margin-bottom: 20px;
+}
